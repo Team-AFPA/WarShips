@@ -163,7 +163,7 @@
          
          if (DEBUG_MODE)
          {
-             [button setBackgroundColor:[UIColor colorWithRed:1 green:0.58 blue:0 alpha:1]];
+             [button setBackgroundColor:[UIColor colorWithRed:1 green:0.93 blue:0 alpha:1]];
              [button setTitle:[[NSString alloc] initWithFormat:@"%ld",[sharedDataManager getShipType:index]] forState:UIControlStateNormal];
          }
      } 
