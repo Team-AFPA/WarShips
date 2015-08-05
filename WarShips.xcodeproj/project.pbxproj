@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		42256DB11B71F0D30090C135 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 42256DAE1B71F0D30090C135 /* AppDelegate.m */; };
+		42256DB21B71F0D30090C135 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42256DB01B71F0D30090C135 /* ViewController.m */; };
+		42256DB51B71F0DB0090C135 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42256DB31B71F0DB0090C135 /* LaunchScreen.xib */; };
+		42256DB61B71F0DB0090C135 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42256DB41B71F0DB0090C135 /* Main.storyboard */; };
 		528FDC9A1B710F800000F4C2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 528FDC991B710F800000F4C2 /* main.m */; };
-		528FDC9D1B710F800000F4C2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 528FDC9C1B710F800000F4C2 /* AppDelegate.m */; };
-		528FDCA01B710F800000F4C2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 528FDC9F1B710F800000F4C2 /* ViewController.m */; };
-		528FDCA31B710F800000F4C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 528FDCA11B710F800000F4C2 /* Main.storyboard */; };
 		528FDCA51B710F800000F4C2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 528FDCA41B710F800000F4C2 /* Images.xcassets */; };
-		528FDCA81B710F810000F4C2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 528FDCA61B710F810000F4C2 /* LaunchScreen.xib */; };
 		528FDCB41B710F810000F4C2 /* WarShipsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 528FDCB31B710F810000F4C2 /* WarShipsTests.m */; };
 /* End PBXBuildFile section */
 
@@ -27,16 +27,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		42256DAD1B71F0D30090C135 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Controllers/AppDelegate.h; sourceTree = "<group>"; };
+		42256DAE1B71F0D30090C135 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Controllers/AppDelegate.m; sourceTree = "<group>"; };
+		42256DAF1B71F0D30090C135 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = Controllers/ViewController.h; sourceTree = "<group>"; };
+		42256DB01B71F0D30090C135 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = Controllers/ViewController.m; sourceTree = "<group>"; };
+		42256DB31B71F0DB0090C135 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LaunchScreen.xib; path = Views/LaunchScreen.xib; sourceTree = "<group>"; };
+		42256DB41B71F0DB0090C135 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Views/Main.storyboard; sourceTree = "<group>"; };
 		528FDC941B710F800000F4C2 /* WarShips.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WarShips.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		528FDC981B710F800000F4C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		528FDC991B710F800000F4C2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		528FDC9B1B710F800000F4C2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		528FDC9C1B710F800000F4C2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		528FDC9E1B710F800000F4C2 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		528FDC9F1B710F800000F4C2 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		528FDCA21B710F800000F4C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		528FDCA41B710F800000F4C2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		528FDCA71B710F810000F4C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		528FDCAD1B710F810000F4C2 /* WarShipsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WarShipsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		528FDCB21B710F810000F4C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		528FDCB31B710F810000F4C2 /* WarShipsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WarShipsTests.m; sourceTree = "<group>"; };
@@ -60,6 +60,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		42256DAA1B71F08B0090C135 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				42256DB31B71F0DB0090C135 /* LaunchScreen.xib */,
+				42256DB41B71F0DB0090C135 /* Main.storyboard */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		42256DAB1B71F0900090C135 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				42256DAD1B71F0D30090C135 /* AppDelegate.h */,
+				42256DAE1B71F0D30090C135 /* AppDelegate.m */,
+				42256DAF1B71F0D30090C135 /* ViewController.h */,
+				42256DB01B71F0D30090C135 /* ViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		42256DAC1B71F0970090C135 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		528FDC8B1B710F800000F4C2 = {
 			isa = PBXGroup;
 			children = (
@@ -81,13 +108,10 @@
 		528FDC961B710F800000F4C2 /* WarShips */ = {
 			isa = PBXGroup;
 			children = (
-				528FDC9B1B710F800000F4C2 /* AppDelegate.h */,
-				528FDC9C1B710F800000F4C2 /* AppDelegate.m */,
-				528FDC9E1B710F800000F4C2 /* ViewController.h */,
-				528FDC9F1B710F800000F4C2 /* ViewController.m */,
-				528FDCA11B710F800000F4C2 /* Main.storyboard */,
+				42256DAC1B71F0970090C135 /* Models */,
+				42256DAB1B71F0900090C135 /* Controllers */,
+				42256DAA1B71F08B0090C135 /* Views */,
 				528FDCA41B710F800000F4C2 /* Images.xcassets */,
-				528FDCA61B710F810000F4C2 /* LaunchScreen.xib */,
 				528FDC971B710F800000F4C2 /* Supporting Files */,
 			);
 			path = WarShips;
@@ -199,8 +223,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				528FDCA31B710F800000F4C2 /* Main.storyboard in Resources */,
-				528FDCA81B710F810000F4C2 /* LaunchScreen.xib in Resources */,
+				42256DB61B71F0DB0090C135 /* Main.storyboard in Resources */,
+				42256DB51B71F0DB0090C135 /* LaunchScreen.xib in Resources */,
 				528FDCA51B710F800000F4C2 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -219,8 +243,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				528FDCA01B710F800000F4C2 /* ViewController.m in Sources */,
-				528FDC9D1B710F800000F4C2 /* AppDelegate.m in Sources */,
+				42256DB21B71F0D30090C135 /* ViewController.m in Sources */,
+				42256DB11B71F0D30090C135 /* AppDelegate.m in Sources */,
 				528FDC9A1B710F800000F4C2 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -242,25 +266,6 @@
 			targetProxy = 528FDCAE1B710F810000F4C2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		528FDCA11B710F800000F4C2 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				528FDCA21B710F800000F4C2 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		528FDCA61B710F810000F4C2 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				528FDCA71B710F810000F4C2 /* Base */,
-			);
-			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		528FDCB51B710F810000F4C2 /* Debug */ = {
@@ -418,6 +423,7 @@
 				528FDCB91B710F810000F4C2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		528FDCBA1B710F810000F4C2 /* Build configuration list for PBXNativeTarget "WarShipsTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +432,7 @@
 				528FDCBC1B710F810000F4C2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
