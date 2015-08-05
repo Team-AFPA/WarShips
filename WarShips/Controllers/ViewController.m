@@ -149,6 +149,8 @@
     {
         [button setIsThereAShip:NO];
         [button setBackgroundColor:[UIColor colorWithRed:0 green:0.29 blue:0.55 alpha:1]];
+        [button setEnabled:YES];
+        [button setTitle:@"" forState:UIControlStateNormal];
     }
 }
 
