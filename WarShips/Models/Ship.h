@@ -13,14 +13,14 @@
     NSArray *lengthTab; // Déclaration du lengthTab
 }
 
-@property (nonatomic) NSInteger Type; // propriété des variables de la classe Ship classes
-@property (nonatomic) NSInteger Length;
-@property (nonatomic) NSInteger NbCaseTouch;
-@property (nonatomic) BOOL IsVertical;
-@property (nonatomic) NSInteger OriginPoint;
+@property (nonatomic) NSInteger type; // propriété des variables de la classe Ship classes
+@property (nonatomic) NSInteger length;
+@property (nonatomic) NSInteger nbCaseTouch;
+@property (nonatomic) BOOL isVertical;
+@property (nonatomic) NSInteger originPoint;
 
--(id) initWithType:(NSInteger)_Type; // Constructeur de la classe Ship
+-(id) initWithType:(NSInteger)_type; // Constructeur de la classe Ship
 
--(void)affectship:(BOOL) isvertical OriginPoint:(NSInteger) originpoint; // Méthode d'affectation des paramètres d'un objet Ship
+-(void)affectShip:(BOOL)isVertical originPoint:(NSInteger)originPoint; // Méthode d'affectation des paramètres d'un objet Ship
 
 @end
