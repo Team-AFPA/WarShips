@@ -203,4 +203,16 @@ static DataManager *sharedDataManager = nil;
     return @[];
 }
 
+/**
+ *  @author François  Juteau, 15-08-05 02:08:58
+ *
+ *  @brief  Get all indexes for all the ships in game
+ *  @return array of all the indexes
+ */
+-(NSArray *)getAllIndexesForAllShips
+{
+    
+    return @[];
+}
+
 @end
