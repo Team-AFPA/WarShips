@@ -230,7 +230,7 @@ static DataManager *sharedDataManager = nil;
     if ( [tempShip nbCaseTouch] == [tempShip length])
     {
         nbShipSunk++;
-        return [self getAllIndexForShipAtIndex:_index];
+        return [self getAllIndexForShipAtIndex:[[_grid objectAtIndex:_index] originPoint]];
     }
     return nil;
 }
