@@ -36,14 +36,19 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+
+    [self updateLabels];
     NSArray *indexesOfShipsPlaces = [sharedDataManager getAllIndexesForAllShips];
     
-//    for (NSUInteger i = 0; i < [indexesOfShipsPlaces count]; i++)
-//    {
-//        
-////        [ [allButtons objectAtIndex:[indexesOfShipsPlaces objectAtIndex:i] ] setIsThereAShip:YES];
-//    }
+    [self setButtonsAtIndexes:indexesOfShipsPlaces];
+}
+
+
+- (void)updateLabels
+{
+    [labelNbShots setText:[NSString stringWithFormat:@"Nombre de tirs : %d", nbShots]];
+    [labelNbPartsOfShipsTouched setText:[NSString stringWithFormat:@"Touchés : %d", nbPartsOfShipsTouched]];
+    [labelNbShipsSunken setText:[NSString stringWithFormat:@"Coulés : %d", nbShipsSunken]];
 }
 
 
@@ -64,13 +69,10 @@
 - (IBAction)fireOnIndex:(id)sender
 {
     nbShots++;
-    [labelNbShots setText:[NSString stringWithFormat:@"Nombre de tirs : %d", nbShots]];
-    
     
     if ([sender isThereAShip])
     {
         nbPartsOfShipsTouched++;
-        [labelNbPartsOfShipsTouched setText:[NSString stringWithFormat:@"Touchés : %d", nbPartsOfShipsTouched]];
         
         // Récupération de l'index du bouton touché
         NSUInteger indexOfTheButton = [allButtons indexOfObject:sender];
@@ -82,7 +84,6 @@
         if (indexesOfShipPlaces != nil) // Le bâteau a été coulé
         {
             nbShipsSunken++;
-            [labelNbShipsSunken setText:[NSString stringWithFormat:@"Coulés : %d", nbShipsSunken]];
 
             // Toutes les cases du bateau deviennent rouges
             for (NSUInteger i =0; i < [indexesOfShipPlaces count]; i++)
@@ -118,14 +119,25 @@
         [sender setBackgroundColor:[UIColor colorWithRed:0.02 green:0.59 blue:1 alpha:1]];
     }
     
+    [self updateLabels];
     // Désactivation du bouton pour que l'utilisateur ne puisse "tirer" 2 fois au même endroit
     [sender setEnabled:NO];
 }
 
+
 - (IBAction)newGame
 {
     [sharedDataManager reset];
+    
+    nbShots = 0;
+    nbPartsOfShipsTouched = 0;
+    nbShipsSunken = 0;
+    
+    [self updateLabels];
+    
     NSArray *indexesOfShipsPlaces = [sharedDataManager getAllIndexesForAllShips];
+    [self resetButtons];
+    [self setButtonsAtIndexes:indexesOfShipsPlaces];
 }
 
 
@@ -134,10 +146,19 @@
     for (ShipButton *button in allButtons)
     {
         [button setIsThereAShip:NO];
+        [button setBackgroundColor:[UIColor colorWithRed:0 green:0.29 blue:0.55 alpha:1]];
     }
 }
 
 
--(void)set
+-(void)setButtonsAtIndexes:(NSArray*)indexesOfShips
+{
+     for (NSUInteger i =0; i < [indexesOfShips count]; i++)
+     {
+         NSUInteger index = [[indexesOfShips objectAtIndex:i] integerValue];
+         ShipButton *button = [allButtons objectAtIndex:index];
+         [button setIsThereAShip:YES];
+     } 
+}
 
 @end

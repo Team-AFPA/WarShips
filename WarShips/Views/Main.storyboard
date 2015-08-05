@@ -1637,7 +1637,7 @@
                                     <rect key="frame" x="280" y="104" width="103" height="30"/>
                                 </variation>
                                 <connections>
-                                    <action selector="newGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LAQ-BP-RdV"/>
+                                    <action selector="newGame" destination="BYZ-38-t0r" eventType="touchUpInside" id="ObI-eF-MJL"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Bataille Navale BSX" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AHr-3N-Pvx">
