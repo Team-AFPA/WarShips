@@ -9,6 +9,16 @@
 #import <UIKit/UIKit.h>
 
 @interface ShipButton : UIButton
+{
+    BOOL isThereAShip;
+}
 
+//Getter method
+-(BOOL) isThereAShip;
+
+
+
+//Setter method
+-(void) setIsThereAShip:(BOOL)_bool;
 
 @end
