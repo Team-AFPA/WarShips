@@ -10,7 +10,7 @@
 #import "ShipButton.h"
 #import "DataManager.h"
 
-#define DEBUG 1
+#define DEBUG_MODE 0
 
 @interface ViewController ()
     @property DataManager *sharedDataManager;
@@ -161,7 +161,7 @@
          ShipButton *button = [allButtons objectAtIndex:index];
          [button setIsThereAShip:YES];
          
-         if (DEBUG)
+         if (DEBUG_MODE)
          {
              [button setBackgroundColor:[UIColor colorWithRed:1 green:0.58 blue:0 alpha:1]];
              [button setTitle:[[NSString alloc] initWithFormat:@"%ld",[sharedDataManager getShipType:index]] forState:UIControlStateNormal];

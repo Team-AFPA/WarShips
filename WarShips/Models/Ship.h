@@ -9,9 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface Ship : NSObject
-{
-    NSArray *lengthTab; // Déclaration du lengthTab
-}
 
 @property NSInteger idType; // propriété des variables de la classe Ship classes
 @property NSInteger length;
