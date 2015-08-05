@@ -10,5 +10,19 @@
 
 @implementation Ship
 
--id InitWithType:(NSInteger)type _andOriginePoint(NSInteger)originpoint
+
+-(id) initWithType:(NSInteger)_type
+{
+    self = [super init];
+    lengthTab= @[@"2", @"3", @"4", @"5"];
+return self;
+}
+
+-(void) affectship: (NSInteger) _type IsVertical:(BOOL)isvertical OriginPoint:(NSInteger)originpoint{
+    _length = [lengthTab[_type] integerValue];
+    _nbcasetouch = 0;
+    _isvertical = isvertical;
+    _originpoint = originpoint;
+    
+}
 @end
