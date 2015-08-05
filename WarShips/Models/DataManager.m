@@ -8,9 +8,16 @@
 
 #import "DataManager.h"
 
-#define SOUS_MARIN = 1;
+#define SOUS_MARIN 1
+#define NBSHIP 5
+#define NBGRID 100
+#define SOUTH_DIRECTION 10
+#define EAST_DIRECTION 1
+#define LAST_LINE 89
 
 @implementation DataManager
+
+static DataManager *sharedDataManager = nil;
 
 #pragma mark - Instance Methods
 
@@ -20,10 +27,30 @@
  *  @brief  Static method to return the instancied object
  *  @return instance of DataManager
  */
-+(DataManager *)sharedDataManager
++(DataManager*)sharedDataManager
 {
-    DataManager *instance = [[DataManager alloc] init];
-    return instance;
+    if (sharedDataManager == nil)
+    {
+        sharedDataManager = [[DataManager alloc] ini];
+    }
+    
+    return sharedDataManager;
+}
+
+- (DataManager*)init
+{
+    self = [super init];
+    
+    if (self)
+    {
+        for (int i = 0; i < NBSHIP; i++)
+        {
+            [_shipArray addObject:[[Ship alloc] initWithType:i]];
+        }
+        _grid = [[NSMutableArray alloc] init:NBGRID];
+    }
+    
+    return self;
 }
 
 
@@ -36,8 +63,22 @@
  */
 -(void)reset
 {
+    NSInteger length = 0;
+    int randomval;
+    BOOL isSouthDirection = NO;
+    NSInteger index = 0;
     
-    
+    for (int i = 0; i < NBSHIP; i++)
+    {
+        if (![self isShipPlacementOk:index withDirection:isSouthDirection withLength:length])
+        {
+            length = [[_shipArray objectAtIndex:i] length];
+            randomval = rand() % 2;
+            isSouthDirection = (BOOL)randomval;
+            index = rand() % 100;
+        }
+        
+    }
 }
 
 /**
@@ -49,10 +90,45 @@
  *  @param _length    ship length
  *  @return true if the ship placement is OK
  */
--(BOOL)isShipPlacementOk:(NSInteger)_index withDirection:(BOOL)_direction withLength:(NSInteger)_length
+-(BOOL)isShipPlacementOk:(NSInteger)_index withDirection:(BOOL)_isSouthDirection withLength:(NSInteger)_length
 {
+    // If the ship is not initialized
+    if (_length != 0)
+    {
+        if ([self isCaseEmpty:_index])
+        {
+            NSInteger direction;
+            NSInteger newIndex = _index;
+            
+            if (_isSouthDirection)
+            {
+                direction = SOUTH_DIRECTION;
+            }
+            else
+            {
+                direction = EAST_DIRECTION;
+            }
+            
+            for (int i = 0; i < _length; i++)
+            {
+                newIndex++;
+                if (![self isCaseEmpty:newIndex] && [self isShipExitsGrid:newIndex withDirection:_isSouthDirection])
+                {
+                    return NO;
+                }
+            }
+            return YES;
+        }
+        else
+        {
+            return NO;
+        }
     
-    return YES;
+    }
+    else
+    {
+        return NO;
+    }
 }
 
 /**
@@ -64,8 +140,35 @@
  */
 -(BOOL)isCaseEmpty:(NSInteger)_index
 {
-    
-    return YES;
+    if ( [[grid objectAtIndex:_index] isEqual:nil])
+    {
+        return YES;
+    }
+    else
+    {
+        return NO;
+    }
+}
+
+/**
+ *  @author François  Juteau, 15-08-05 05:08:02
+ *
+ *  @brief  Check if the next ship index will be displayed in another line
+ *  @param _index            next index
+ *  @param _isSouthDirection direction of the next index
+ *  @return true if the ship is in parts
+ */
+-(BOOL)isShipExitsGrid:(NSInteger)_index withDirection:(BOOL)_isSouthDirection
+{
+    if (_index%10 == 0 && !_isSouthDirection)
+    {
+        return YES;
+    }
+    if (_index > LAST_LINE && _isSouthDirection)
+    {
+        return YES;
+    }
+    return NO;
 }
 
 /**

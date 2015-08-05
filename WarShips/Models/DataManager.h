@@ -10,7 +10,9 @@
 #import "Ship.h"
 
 @interface DataManager : NSObject
-
+{
+    NSArray *test;
+}
 #pragma mark - Properties
 
 /**
@@ -18,14 +20,14 @@
  *
  *  @brief  array of ships positions
  */
-@property (weak, nonatomic, readonly) NSArray *grid;
+@property (weak, nonatomic, readonly) NSMutableArray *grid;
 
 /**
  *  @author François  Juteau, 15-08-05 00:08:03
  *
  *  @brief  array of every ships
  */
-@property (weak, nonatomic, readonly) NSArray *shipArray;
+@property (weak, nonatomic, readonly) NSMutableArray *shipArray;
 
 
 #pragma mark - Instance Methods
@@ -36,7 +38,7 @@
  *  @brief  Static method to return the instancied object
  *  @return instance of DataManager
  */
-+(DataManager *)sharedDataManager;
++(DataManager*)sharedDataManager;
 
 
 #pragma mark - Methods
@@ -67,6 +69,17 @@
  *  @return true if empty
  */
 -(BOOL)isCaseEmpty:(NSInteger)_index;
+
+
+/**
+ *  @author François  Juteau, 15-08-05 05:08:02
+ *
+ *  @brief  Check if the next ship index will be displayed in another line
+ *  @param _index            next index
+ *  @param _isSouthDirection direction of the next index
+ *  @return true if the ship is in parts
+ */
+-(BOOL)isShipExitsGrid:(NSInteger)_index withDirection:(BOOL)_isSouthDirection;
 
 /**
  *  @author François  Juteau, 15-08-05 02:08:54
