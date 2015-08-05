@@ -5,7 +5,7 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>E4A0B656-452B-47C1-90F0-AD6F90D6419F</string>
+	<string>DF44F1F1-93E4-43BB-B59A-5DA6CE70C1AE</string>
 	<key>IDESourceControlProjectName</key>
 	<string>WarShips</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
@@ -34,7 +34,7 @@
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>B9081B50FFB3902AAD5D254062CE17272C25692A</string>
 			<key>IDESourceControlWCCName</key>
-			<string>WarShips-ObjC</string>
+			<string>WarShips</string>
 		</dict>
 	</array>
 </dict>
