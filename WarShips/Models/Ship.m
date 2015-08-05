@@ -18,7 +18,7 @@
 return self;
 }
 
--(void) affectship: (NSInteger) _type IsVertical:(BOOL)isvertical OriginPoint:(NSInteger)originpoint{
+-(void) affectship: (NSInteger) type IsVertical:(BOOL)isvertical OriginPoint:(NSInteger)originpoint{
     _nbcasetouch = 0;
     _length = [lengthTab[_type] integerValue];
     _isvertical = isvertical;

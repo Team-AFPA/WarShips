@@ -21,6 +21,6 @@
 
 -(id) initWithType:(NSInteger)_type;
 
--(void)affectship:(NSInteger)_type IsVertical:(BOOL) _isvertical OriginPoint:(NSInteger) _originpoint;
+-(void)affectship:(NSInteger)type IsVertical:(BOOL) isvertical OriginPoint:(NSInteger) originpoint;
 
 @end
