@@ -113,4 +113,9 @@
  */
 -(BOOL)isEndOfGame;
 
+
+#pragma mark - DEBUG
+
+-(NSUInteger)getShipType:(NSUInteger)_index;
+
 @end

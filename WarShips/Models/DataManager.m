@@ -105,24 +105,22 @@ static DataManager *sharedDataManager = nil;
     
     for (int i = 0; i < NBSHIP; i++)
     {
-        if (![self isShipPlacementOk:index withDirection:isSouthDirection withLength:length])
+        length = 0;
+        
+        while(![self isShipPlacementOk:index withDirection:isSouthDirection withLength:length])
         {
             length = [[_shipArray objectAtIndex:i] length];
             randomval = arc4random() % 2;
             isSouthDirection = (BOOL)randomval;
             index = arc4random() % 95;
             NSLog(@"REPLACE SHIP : length : %ld, isSouthDirection : %d, index : %ld",length, isSouthDirection, index);
-            i--;
         }
-        else
+        [[_shipArray objectAtIndex:i] affectShip:isSouthDirection originPoint:index];
+        direction = [self getDirection:isSouthDirection];
+        for (int j = 0; j < length; j++)
         {
-            [[_shipArray objectAtIndex:i] affectShip:isSouthDirection originPoint:index];
-            direction = [self getDirection:isSouthDirection];
-            for (int j = 0; j < length; j++)
-            {
-                index += direction;
-                [_grid replaceObjectAtIndex:index withObject:[_shipArray objectAtIndex:i]];
-            }
+            [_grid replaceObjectAtIndex:index withObject:[_shipArray objectAtIndex:i]];
+            index += direction;
         }
     }
 }
@@ -148,11 +146,16 @@ static DataManager *sharedDataManager = nil;
             
             for (int i = 0; i < _length; i++)
             {
-                newIndex += direction;
-                if (![self isCaseEmpty:newIndex] && [self isShipExitsGrid:newIndex withDirection:_isSouthDirection])
+                if (![self isCaseEmpty:newIndex] )
                 {
                     return NO;
                 }
+                if ([self isShipExitsGrid:newIndex withDirection:_isSouthDirection])
+                {
+                    return NO;
+                }
+                newIndex += direction;
+                
             }
             return YES;
         }
@@ -197,11 +200,15 @@ static DataManager *sharedDataManager = nil;
  */
 -(BOOL)isShipExitsGrid:(NSInteger)_index withDirection:(BOOL)_isSouthDirection
 {
-    if (_index%10 == 0 && !_isSouthDirection)
+    if (!_isSouthDirection && _index%10 == 9 )
     {
         return YES;
     }
-    if (_index > LAST_LINE && _isSouthDirection)
+    if (_isSouthDirection && _index > LAST_LINE )
+    {
+        return YES;
+    }
+    if(_index == 90)
     {
         return YES;
     }
@@ -247,9 +254,9 @@ static DataManager *sharedDataManager = nil;
     for (int i = 0; i < length; i++)
     {
         direction = [self getDirection:isSouthDirection];
-        newIndex += direction;
         
-        [tempIndexes[i] addObject:[[NSString alloc] initWithFormat:@"%ld", newIndex]];
+        [tempIndexes addObject:[[NSString alloc] initWithFormat:@"%ld", newIndex]];
+        newIndex += direction;
     }
     
     return tempIndexes;
@@ -300,5 +307,13 @@ static DataManager *sharedDataManager = nil;
     {
         return EAST_DIRECTION;
     }
+}
+
+#pragma mark - DEBUG
+
+-(NSUInteger)getShipType:(NSUInteger)_index
+{
+    Ship *tempShip = [_grid objectAtIndex:_index];
+    return [tempShip idType];
 }
 @end
