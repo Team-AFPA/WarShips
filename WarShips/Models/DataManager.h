@@ -7,7 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Ship.h"
 
 @interface DataManager : NSObject
+
 
 @end
