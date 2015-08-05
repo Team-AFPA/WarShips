@@ -31,7 +31,7 @@ static DataManager *sharedDataManager = nil;
 {
     if (sharedDataManager == nil)
     {
-        sharedDataManager = [[DataManager alloc] ini];
+        sharedDataManager = [[DataManager alloc] init];
     }
     
     return sharedDataManager;
@@ -46,8 +46,14 @@ static DataManager *sharedDataManager = nil;
         for (int i = 0; i < NBSHIP; i++)
         {
             [_shipArray addObject:[[Ship alloc] initWithType:i]];
+            
+            // We have two submarin in the game
+            if (i == SOUS_MARIN)
+            {
+                [_shipArray addObject:[[Ship alloc] initWithType:i]];
+            }
         }
-        _grid = [[NSMutableArray alloc] init:NBGRID];
+        _grid = [[NSMutableArray alloc] initWithCapacity:NBGRID];
     }
     
     return self;
@@ -140,7 +146,7 @@ static DataManager *sharedDataManager = nil;
  */
 -(BOOL)isCaseEmpty:(NSInteger)_index
 {
-    if ( [[grid objectAtIndex:_index] isEqual:nil])
+    if ( [[_grid objectAtIndex:_index] isEqual:nil])
     {
         return YES;
     }
