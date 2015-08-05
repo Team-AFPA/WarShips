@@ -10,4 +10,5 @@
 
 @implementation Ship
 
+-id InitWithType:(NSInteger)type _andOriginePoint(NSInteger)originpoint
 @end
