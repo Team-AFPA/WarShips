@@ -10,9 +10,7 @@
 #import "Ship.h"
 
 @interface DataManager : NSObject
-{
-    NSArray *test;
-}
+
 #pragma mark - Properties
 
 /**
