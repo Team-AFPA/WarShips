@@ -2,7 +2,7 @@
 //  Ship.h
 //  WarShips
 //
-//  Created by François Juteau on 05/08/2015.
+//  Created by Julien Poumarat on 05/08/2015.
 //  Copyright (c) 2015 Thibault Le Cornec. All rights reserved.
 //
 
@@ -10,17 +10,17 @@
 
 @interface Ship : NSObject
 {
-    NSArray *lengthTab;
+    NSArray *lengthTab; // Déclaration du lengthTab
 }
 
-@property (nonatomic) NSInteger type;
-@property (nonatomic) NSInteger length;
-@property (nonatomic) NSInteger nbcasetouch;
-@property (nonatomic) BOOL isvertical;
-@property (nonatomic) NSInteger originpoint;
+@property (nonatomic) NSInteger Type; // propriété des variables de la classe Ship classes
+@property (nonatomic) NSInteger Length;
+@property (nonatomic) NSInteger NbCaseTouch;
+@property (nonatomic) BOOL IsVertical;
+@property (nonatomic) NSInteger OriginPoint;
 
--(id) initWithType:(NSInteger)_type;
+-(id) initWithType:(NSInteger)_Type; // Constructeur de la classe Ship
 
--(void)affectship:(NSInteger)type IsVertical:(BOOL) isvertical OriginPoint:(NSInteger) originpoint;
+-(void)affectship:(BOOL) isvertical OriginPoint:(NSInteger) originpoint; // Méthode d'affectation des paramètres d'un objet Ship
 
 @end
