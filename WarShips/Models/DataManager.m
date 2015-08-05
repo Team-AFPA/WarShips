@@ -64,7 +64,11 @@ static DataManager *sharedDataManager = nil;
                 [_shipArray addObject:[[Ship alloc] initWithType:i]];
             }
         }
-        _grid = [[NSMutableArray alloc] initWithCapacity:NBGRID];
+        _grid = [[NSMutableArray alloc] init];
+        for (int j = 0; j < NBGRID; j++)
+        {
+            [_grid addObject:@""];
+        }
         [self reset];
     }
     
@@ -83,7 +87,7 @@ static DataManager *sharedDataManager = nil;
 {
     for (int i = 0; i > NBGRID; i++)
     {
-        [_grid replaceObjectAtIndex:i withObject:nil];
+        [_grid replaceObjectAtIndex:i withObject:@""];
     }
     
     nbShipSunk = 0;
@@ -93,11 +97,11 @@ static DataManager *sharedDataManager = nil;
 
 -(void)replaceShips
 {
-    NSMutableArray *tempIndexes = [[NSMutableArray alloc] init];
     NSUInteger length = 0;
     int randomval;
     BOOL isSouthDirection = NO;
     NSUInteger index = 0;
+    NSUInteger direction;
     
     for (int i = 0; i < NBSHIP; i++)
     {
@@ -106,19 +110,18 @@ static DataManager *sharedDataManager = nil;
             length = [[_shipArray objectAtIndex:i] length];
             randomval = arc4random() % 2;
             isSouthDirection = (BOOL)randomval;
-            index = arc4random() % 100;
+            index = arc4random() % 95;
             NSLog(@"REPLACE SHIP : length : %ld, isSouthDirection : %d, index : %ld",length, isSouthDirection, index);
             i--;
         }
         else
         {
-            [[_shipArray objectAtIndex:i] setLength:length];
-            [[_shipArray objectAtIndex:i] setIsVertical:isSouthDirection];
-            [[_shipArray objectAtIndex:i] setOriginPoint:index];
-            tempIndexes = [self getAllIndexForShipAtIndex:index];
+            [[_shipArray objectAtIndex:i] affectShip:isSouthDirection originPoint:index];
+            direction = [self getDirection:isSouthDirection];
             for (int j = 0; j < length; j++)
             {
-                [_grid replaceObjectAtIndex:[tempIndexes[j] integerValue] withObject:[_shipArray objectAtIndex:i]];
+                index += direction;
+                [_grid replaceObjectAtIndex:index withObject:[_shipArray objectAtIndex:i]];
             }
         }
     }
@@ -140,21 +143,12 @@ static DataManager *sharedDataManager = nil;
     {
         if ([self isCaseEmpty:_index])
         {
-            NSInteger direction;
+            NSInteger direction = [self getDirection:_isSouthDirection];
             NSInteger newIndex = _index;
-            
-            if (_isSouthDirection)
-            {
-                direction = SOUTH_DIRECTION;
-            }
-            else
-            {
-                direction = EAST_DIRECTION;
-            }
             
             for (int i = 0; i < _length; i++)
             {
-                newIndex++;
+                newIndex += direction;
                 if (![self isCaseEmpty:newIndex] && [self isShipExitsGrid:newIndex withDirection:_isSouthDirection])
                 {
                     return NO;
@@ -183,7 +177,7 @@ static DataManager *sharedDataManager = nil;
  */
 -(BOOL)isCaseEmpty:(NSInteger)_index
 {
-    if ( [[_grid objectAtIndex:_index] isEqual:nil])
+    if ( [[_grid objectAtIndex:_index] isEqual:@""])
     {
         return YES;
     }
@@ -244,22 +238,15 @@ static DataManager *sharedDataManager = nil;
 -(NSMutableArray *)getAllIndexForShipAtIndex:(NSInteger)_index
 {
     NSMutableArray *tempIndexes = [[NSMutableArray alloc] init];
-    NSUInteger length = [[_grid objectAtIndex:_index] length];
-    BOOL isSouthDirection = [[_grid objectAtIndex:_index] isVertical];
+    Ship *tempShip = [_grid objectAtIndex:_index];
+    NSUInteger length = [tempShip length];
+    BOOL isSouthDirection = [tempShip isVertical];
     NSUInteger direction;
     NSUInteger newIndex = _index;
     
     for (int i = 0; i < length; i++)
     {
-        
-        if (isSouthDirection)
-        {
-            direction = SOUTH_DIRECTION;
-        }
-        else
-        {
-            direction = EAST_DIRECTION;
-        }
+        direction = [self getDirection:isSouthDirection];
         newIndex += direction;
         
         [tempIndexes[i] addObject:[[NSString alloc] initWithFormat:@"%ld", newIndex]];
@@ -303,4 +290,15 @@ static DataManager *sharedDataManager = nil;
     }
 }
 
+-(NSUInteger)getDirection:(BOOL)_isSouthDirection
+{
+    if (_isSouthDirection)
+    {
+        return SOUTH_DIRECTION;
+    }
+    else
+    {
+        return EAST_DIRECTION;
+    }
+}
 @end
