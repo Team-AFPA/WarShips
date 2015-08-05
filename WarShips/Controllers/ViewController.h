@@ -10,6 +10,9 @@
 
 @interface ViewController : UIViewController
 
+@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *allButtons;
+
+- (IBAction)fireOnIndex:(id)sender;
 
 @end
 
