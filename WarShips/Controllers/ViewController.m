@@ -15,7 +15,7 @@
 @end
 
 @implementation ViewController
-@synthesize sharedDataManager, allButtons;
+@synthesize sharedDataManager, labelNbShots, labelNbPartsOfShipsTouched, labelNbShipsSunken, allButtons;
 
 -(instancetype)initWithCoder:(NSCoder *)aDecoder
 {
@@ -24,6 +24,9 @@
     if (self)
     {
         sharedDataManager = [DataManager sharedDataManager];
+        nbShots = 0;
+        nbPartsOfShipsTouched = 0;
+        nbShipsSunken = 0;
     }
 
     return self;
@@ -34,13 +37,13 @@
 {
     [super viewDidLoad];
     
-    NSArray *indexesOfShipsPlaces = [sharedDataManager getAllIndexesOfAllShips];
+    NSArray *indexesOfShipsPlaces = [sharedDataManager getAllIndexesForAllShips];
     
-    for (NSUInteger i = 0; i < [indexesOfShipsPlaces count]; i++)
-    {
-        [[allButtons objectAtIndex:[indexesOfShipsPlaces objectAtIndex:i]] setIsThereAShip:YES];
-    }
-    // Do any additional setup after loading the view, typically from a nib.
+//    for (NSUInteger i = 0; i < [indexesOfShipsPlaces count]; i++)
+//    {
+//        
+////        [ [allButtons objectAtIndex:[indexesOfShipsPlaces objectAtIndex:i] ] setIsThereAShip:YES];
+//    }
 }
 
 
@@ -60,13 +63,81 @@
  */
 - (IBAction)fireOnIndex:(id)sender
 {
+    nbShots++;
+    [labelNbShots setText:[NSString stringWithFormat:@"Nombre de tirs : %d", nbShots]];
+    
+    
     if ([sender isThereAShip])
     {
+        nbPartsOfShipsTouched++;
+        [labelNbPartsOfShipsTouched setText:[NSString stringWithFormat:@"Touchés : %d", nbPartsOfShipsTouched]];
         
+        // Récupération de l'index du bouton touché
+        NSUInteger indexOfTheButton = [allButtons indexOfObject:sender];
+        
+        // Si le bâteau est coulé on reçoit le tableau des index où il est présent.
+        // Sinon on reçoit nil.
+        NSArray *indexesOfShipPlaces = [sharedDataManager shipTouch:indexOfTheButton];
+        
+        if (indexesOfShipPlaces != nil) // Le bâteau a été coulé
+        {
+            nbShipsSunken++;
+            [labelNbShipsSunken setText:[NSString stringWithFormat:@"Coulés : %d", nbShipsSunken]];
+
+            // Toutes les cases du bateau deviennent rouges
+            for (NSUInteger i =0; i < [indexesOfShipPlaces count]; i++)
+            {
+                NSUInteger index = [[indexesOfShipPlaces objectAtIndex:i] integerValue];
+                ShipButton *button = [allButtons objectAtIndex:index];
+                [button setBackgroundColor:[UIColor colorWithRed:0.8 green:0.11 blue:0 alpha:1]];
+            }
+            
+            BOOL isEndOfGame = [sharedDataManager isEndOfGame];
+            
+            if (isEndOfGame)
+            {
+                NSString *messageWinner = [NSString stringWithFormat:@"Vous avez trouvé tout les bateaux !\nVotre score : %d", nbShots];
+                UIAlertView *win = [[UIAlertView alloc] initWithTitle:@"Bravo !" 
+                                                              message:messageWinner 
+                                                             delegate:nil 
+                                                    cancelButtonTitle:@"Ok"
+                                                    otherButtonTitles:nil];
+                [win show];
+                [self newGame];
+            }
+        }
+        else
+        {
+            // Bâteau touché mais pas coulé = case orange
+            [sender setBackgroundColor:[UIColor colorWithRed:1 green:0.58 blue:0 alpha:1]];
+        }
     }
     else
     {
+        // Aucun bâteau touché = case bleu clair
         [sender setBackgroundColor:[UIColor colorWithRed:0.02 green:0.59 blue:1 alpha:1]];
     }
+    
+    // Désactivation du bouton pour que l'utilisateur ne puisse "tirer" 2 fois au même endroit
+    [sender setEnabled:NO];
 }
+
+- (IBAction)newGame
+{
+    [sharedDataManager reset];
+    NSArray *indexesOfShipsPlaces = [sharedDataManager getAllIndexesForAllShips];
+}
+
+
+-(void)resetButtons
+{
+    for (ShipButton *button in allButtons)
+    {
+        [button setIsThereAShip:NO];
+    }
+}
+
+
+-(void)set
+
 @end
