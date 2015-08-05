@@ -10,5 +10,28 @@
 
 @implementation ShipButton
 
+- (instancetype)init
+{
+    self = [super init];
+    
+    if (self != nil)
+    {
+        isThereAShip = NO;
+    }
+    
+    return self;
+}
+
+
+-(BOOL) isThereAShip
+{
+    return isThereAShip;
+}
+
+
+-(void) setIsThereAShip:(BOOL)_bool
+{
+    isThereAShip= _bool;
+}
 
 @end
