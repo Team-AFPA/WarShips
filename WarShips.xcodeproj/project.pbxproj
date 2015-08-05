@@ -11,6 +11,9 @@
 		42256DB21B71F0D30090C135 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42256DB01B71F0D30090C135 /* ViewController.m */; };
 		42256DB51B71F0DB0090C135 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42256DB31B71F0DB0090C135 /* LaunchScreen.xib */; };
 		42256DB61B71F0DB0090C135 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42256DB41B71F0DB0090C135 /* Main.storyboard */; };
+		42256DB91B71F1960090C135 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 42256DB81B71F1960090C135 /* DataManager.m */; };
+		42256DBC1B71F1D10090C135 /* ShipButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 42256DBB1B71F1D10090C135 /* ShipButton.m */; };
+		42256DBF1B71F1E20090C135 /* Ship.m in Sources */ = {isa = PBXBuildFile; fileRef = 42256DBE1B71F1E20090C135 /* Ship.m */; };
 		528FDC9A1B710F800000F4C2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 528FDC991B710F800000F4C2 /* main.m */; };
 		528FDCA51B710F800000F4C2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 528FDCA41B710F800000F4C2 /* Images.xcassets */; };
 		528FDCB41B710F810000F4C2 /* WarShipsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 528FDCB31B710F810000F4C2 /* WarShipsTests.m */; };
@@ -33,6 +36,12 @@
 		42256DB01B71F0D30090C135 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = Controllers/ViewController.m; sourceTree = "<group>"; };
 		42256DB31B71F0DB0090C135 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LaunchScreen.xib; path = Views/LaunchScreen.xib; sourceTree = "<group>"; };
 		42256DB41B71F0DB0090C135 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Views/Main.storyboard; sourceTree = "<group>"; };
+		42256DB71B71F1960090C135 /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataManager.h; path = Models/DataManager.h; sourceTree = "<group>"; };
+		42256DB81B71F1960090C135 /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataManager.m; path = Models/DataManager.m; sourceTree = "<group>"; };
+		42256DBA1B71F1D10090C135 /* ShipButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShipButton.h; path = Models/ShipButton.h; sourceTree = "<group>"; };
+		42256DBB1B71F1D10090C135 /* ShipButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShipButton.m; path = Models/ShipButton.m; sourceTree = "<group>"; };
+		42256DBD1B71F1E20090C135 /* Ship.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Ship.h; path = Models/Ship.h; sourceTree = "<group>"; };
+		42256DBE1B71F1E20090C135 /* Ship.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Ship.m; path = Models/Ship.m; sourceTree = "<group>"; };
 		528FDC941B710F800000F4C2 /* WarShips.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WarShips.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		528FDC981B710F800000F4C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		528FDC991B710F800000F4C2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -83,6 +92,12 @@
 		42256DAC1B71F0970090C135 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				42256DB71B71F1960090C135 /* DataManager.h */,
+				42256DB81B71F1960090C135 /* DataManager.m */,
+				42256DBA1B71F1D10090C135 /* ShipButton.h */,
+				42256DBB1B71F1D10090C135 /* ShipButton.m */,
+				42256DBD1B71F1E20090C135 /* Ship.h */,
+				42256DBE1B71F1E20090C135 /* Ship.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -244,8 +259,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				42256DB21B71F0D30090C135 /* ViewController.m in Sources */,
+				42256DB91B71F1960090C135 /* DataManager.m in Sources */,
 				42256DB11B71F0D30090C135 /* AppDelegate.m in Sources */,
 				528FDC9A1B710F800000F4C2 /* main.m in Sources */,
+				42256DBC1B71F1D10090C135 /* ShipButton.m in Sources */,
+				42256DBF1B71F1E20090C135 /* Ship.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
