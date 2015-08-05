@@ -72,6 +72,8 @@
 		42256DAA1B71F08B0090C135 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				42256DBA1B71F1D10090C135 /* ShipButton.h */,
+				42256DBB1B71F1D10090C135 /* ShipButton.m */,
 				42256DB31B71F0DB0090C135 /* LaunchScreen.xib */,
 				42256DB41B71F0DB0090C135 /* Main.storyboard */,
 			);
@@ -94,8 +96,6 @@
 			children = (
 				42256DB71B71F1960090C135 /* DataManager.h */,
 				42256DB81B71F1960090C135 /* DataManager.m */,
-				42256DBA1B71F1D10090C135 /* ShipButton.h */,
-				42256DBB1B71F1D10090C135 /* ShipButton.m */,
 				42256DBD1B71F1E20090C135 /* Ship.h */,
 				42256DBE1B71F1E20090C135 /* Ship.m */,
 			);
