@@ -18,14 +18,14 @@
  *
  *  @brief  array of ships positions
  */
-@property (weak, nonatomic, readonly) NSMutableArray *grid;
+@property (strong, nonatomic, readonly) NSMutableArray *grid;
 
 /**
  *  @author François  Juteau, 15-08-05 00:08:03
  *
  *  @brief  array of every ships
  */
-@property (weak, nonatomic, readonly) NSMutableArray *shipArray;
+@property (strong, nonatomic, readonly) NSMutableArray *shipArray;
 
 
 #pragma mark - Instance Methods

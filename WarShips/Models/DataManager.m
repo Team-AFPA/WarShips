@@ -40,6 +40,12 @@ static DataManager *sharedDataManager = nil;
     return sharedDataManager;
 }
 
+/**
+ *  @author François  Juteau, 15-08-05 07:08:29
+ *
+ *  @brief  Initialize the properties
+ *  @return instance of DataManager
+ */
 - (DataManager*)init
 {
     self = [super init];
@@ -59,6 +65,7 @@ static DataManager *sharedDataManager = nil;
             }
         }
         _grid = [[NSMutableArray alloc] initWithCapacity:NBGRID];
+        [self reset];
     }
     
     return self;
@@ -87,19 +94,21 @@ static DataManager *sharedDataManager = nil;
 -(void)replaceShips
 {
     NSMutableArray *tempIndexes = [[NSMutableArray alloc] init];
-    NSInteger length = 0;
+    NSUInteger length = 0;
     int randomval;
     BOOL isSouthDirection = NO;
-    NSInteger index = 0;
+    NSUInteger index = 0;
     
     for (int i = 0; i < NBSHIP; i++)
     {
         if (![self isShipPlacementOk:index withDirection:isSouthDirection withLength:length])
         {
             length = [[_shipArray objectAtIndex:i] length];
-            randomval = rand() % 2;
+            randomval = arc4random() % 2;
             isSouthDirection = (BOOL)randomval;
-            index = rand() % 100;
+            index = arc4random() % 100;
+            NSLog(@"REPLACE SHIP : length : %ld, isSouthDirection : %d, index : %ld",length, isSouthDirection, index);
+            i--;
         }
         else
         {
