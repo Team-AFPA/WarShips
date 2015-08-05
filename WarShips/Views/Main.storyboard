@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,8 +16,1157 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X6f-PY-npq" customClass="ShipButton">
+                                <rect key="frame" x="79" y="547" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Pk0-ea-IE1"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Touchés : 100" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tYf-qv-QLD">
+                                <rect key="frame" x="16" y="66" width="107" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Coulés : 100" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vac-Jm-yBy">
+                                <rect key="frame" x="16" y="104" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Nombre de coups : 100" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F4E-H7-7cQ">
+                                <rect key="frame" x="403" y="66" width="181" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T2b-iE-n0e">
+                                <rect key="frame" x="481" y="104" width="103" height="30"/>
+                                <state key="normal" title="Nouvelle partie">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5nm-qr-zbM" customClass="ShipButton">
+                                <rect key="frame" x="79" y="367" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="e7H-ji-FFr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VmD-Tu-dAl" customClass="ShipButton">
+                                <rect key="frame" x="79" y="412" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="A4C-di-ZnI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9cW-tP-6P2" customClass="ShipButton">
+                                <rect key="frame" x="79" y="457" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ooS-bh-e9F"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o7J-va-d0N" customClass="ShipButton">
+                                <rect key="frame" x="79" y="232" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2Ii-6e-ANJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="99F-jk-9Jl" customClass="ShipButton">
+                                <rect key="frame" x="79" y="187" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CQx-AU-Px5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wym-rB-WOl" customClass="ShipButton">
+                                <rect key="frame" x="79" y="142" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pTR-ad-9aH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GJy-xy-18k" customClass="ShipButton">
+                                <rect key="frame" x="79" y="502" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FjG-Xa-hNc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tuQ-zU-XSF" customClass="ShipButton">
+                                <rect key="frame" x="79" y="277" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZgF-9d-cSt"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ebp-u8-K1d" customClass="ShipButton">
+                                <rect key="frame" x="79" y="322" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nqB-Xq-m0E"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1hj-za-MH0" customClass="ShipButton">
+                                <rect key="frame" x="124" y="547" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Lad-eR-DZg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CZg-oE-jcN" customClass="ShipButton">
+                                <rect key="frame" x="124" y="367" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="b13-EM-v8A"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bMH-aG-9LL" customClass="ShipButton">
+                                <rect key="frame" x="124" y="412" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NIg-k4-tUA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X6F-nw-MHG" customClass="ShipButton">
+                                <rect key="frame" x="124" y="457" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zdu-Zf-h5N"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XJI-vB-Qw4" customClass="ShipButton">
+                                <rect key="frame" x="124" y="232" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eyW-xl-ABu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LDh-LE-Kzv" customClass="ShipButton">
+                                <rect key="frame" x="124" y="187" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="e8h-vO-rQ7"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B73-Vz-dbi" customClass="ShipButton">
+                                <rect key="frame" x="124" y="142" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GNc-Ak-0Bt"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I8b-Hv-ODm" customClass="ShipButton">
+                                <rect key="frame" x="124" y="502" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AmI-ch-MhO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lUz-8i-ePg" customClass="ShipButton">
+                                <rect key="frame" x="124" y="277" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WVu-W1-pG8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fX2-GT-lB9" customClass="ShipButton">
+                                <rect key="frame" x="124" y="322" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="snp-TF-cca"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PfU-ME-xf0" customClass="ShipButton">
+                                <rect key="frame" x="169" y="547" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5f3-7T-L7h"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tIq-FI-u4p" customClass="ShipButton">
+                                <rect key="frame" x="169" y="367" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cqG-xN-Ow0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vL0-ef-dBC" customClass="ShipButton">
+                                <rect key="frame" x="169" y="412" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AKS-6A-2gy"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nXu-fE-KTE" customClass="ShipButton">
+                                <rect key="frame" x="169" y="457" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="reH-YB-wAJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pdX-Wv-ppG" customClass="ShipButton">
+                                <rect key="frame" x="169" y="232" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hqH-fp-dDg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DgX-jp-H4z" customClass="ShipButton">
+                                <rect key="frame" x="169" y="187" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="N4u-8a-cPz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YUb-fi-bFL" customClass="ShipButton">
+                                <rect key="frame" x="169" y="142" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QDQ-MV-00e"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NJC-5o-Ujs" customClass="ShipButton">
+                                <rect key="frame" x="169" y="502" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9mc-IG-4zZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mFp-FJ-Kqe" customClass="ShipButton">
+                                <rect key="frame" x="169" y="277" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hyf-Vi-yeN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mj9-Tf-5cF" customClass="ShipButton">
+                                <rect key="frame" x="169" y="322" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Pk4-87-gvV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eSX-H7-U3d" customClass="ShipButton">
+                                <rect key="frame" x="214" y="547" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XVF-yW-D05"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iUo-Rg-sXx" customClass="ShipButton">
+                                <rect key="frame" x="214" y="367" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tHy-GE-6vv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mFr-ay-k0a" customClass="ShipButton">
+                                <rect key="frame" x="214" y="412" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2zi-Ez-hG4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tax-cA-kmP" customClass="ShipButton">
+                                <rect key="frame" x="214" y="457" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IpF-p6-TRx"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="icM-r1-9CL" customClass="ShipButton">
+                                <rect key="frame" x="214" y="232" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KS6-4A-fLD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zad-M0-wHq" customClass="ShipButton">
+                                <rect key="frame" x="214" y="187" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3z4-Eo-Zpj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WSQ-RB-eFU" customClass="ShipButton">
+                                <rect key="frame" x="214" y="142" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qvr-xQ-5lp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iwI-E5-34X" customClass="ShipButton">
+                                <rect key="frame" x="214" y="502" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pny-Fh-qf0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mar-pg-EXk" customClass="ShipButton">
+                                <rect key="frame" x="214" y="277" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VgQ-Nq-V9V"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gZX-bY-Z4f" customClass="ShipButton">
+                                <rect key="frame" x="214" y="322" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ouc-eQ-RNL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hV8-GO-RKL" customClass="ShipButton">
+                                <rect key="frame" x="259" y="547" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Acp-al-5jy"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="51M-V9-8oJ" customClass="ShipButton">
+                                <rect key="frame" x="259" y="367" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8Q7-jt-NlH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yFh-UE-1zO" customClass="ShipButton">
+                                <rect key="frame" x="259" y="412" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FhY-98-wwm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kZG-lk-dhj" customClass="ShipButton">
+                                <rect key="frame" x="259" y="457" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="c55-lU-tbS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SaI-bQ-4CF" customClass="ShipButton">
+                                <rect key="frame" x="259" y="232" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4Xt-LK-RyZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TDW-AH-5bj" customClass="ShipButton">
+                                <rect key="frame" x="259" y="187" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nXW-vc-eBk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qVv-R2-vi0" customClass="ShipButton">
+                                <rect key="frame" x="259" y="142" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FOX-TB-eCe"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xpe-FK-uLG" customClass="ShipButton">
+                                <rect key="frame" x="259" y="502" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eQV-ly-Hms"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WnE-AR-ed9" customClass="ShipButton">
+                                <rect key="frame" x="259" y="277" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="13M-a7-U9E"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zqi-B8-60p" customClass="ShipButton">
+                                <rect key="frame" x="259" y="322" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WOD-JL-XdS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xEw-bP-r4e" customClass="ShipButton">
+                                <rect key="frame" x="304" y="547" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="M7n-nq-xbq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cq4-9i-j1f" customClass="ShipButton">
+                                <rect key="frame" x="304" y="367" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="O5Z-nk-hhd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YN6-Xf-FZW" customClass="ShipButton">
+                                <rect key="frame" x="304" y="412" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AiP-EG-xpQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cep-z8-L5o" customClass="ShipButton">
+                                <rect key="frame" x="304" y="457" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LfE-kD-FuQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BZm-EQ-G15" customClass="ShipButton">
+                                <rect key="frame" x="304" y="232" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ijr-Qa-wp4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ndT-F9-XTU" customClass="ShipButton">
+                                <rect key="frame" x="304" y="187" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oie-ya-SeT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OmT-03-uJr" customClass="ShipButton">
+                                <rect key="frame" x="304" y="142" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HPF-sR-w1d"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yis-X9-DC9" customClass="ShipButton">
+                                <rect key="frame" x="304" y="502" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NW7-iQ-lVA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dIh-j3-m1C" customClass="ShipButton">
+                                <rect key="frame" x="304" y="277" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ycd-hy-5hA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y1O-PA-gMy" customClass="ShipButton">
+                                <rect key="frame" x="304" y="322" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oka-4e-zgg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NxB-bt-fgH" customClass="ShipButton">
+                                <rect key="frame" x="349" y="547" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="K7y-LL-rjA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lgb-OB-Bm6" customClass="ShipButton">
+                                <rect key="frame" x="349" y="367" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qwr-vD-Cnt"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="abv-dx-UMU" customClass="ShipButton">
+                                <rect key="frame" x="349" y="412" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9m4-y0-kkC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2xM-KP-wT7" customClass="ShipButton">
+                                <rect key="frame" x="349" y="457" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="afm-h0-DT9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l6c-Kw-17M" customClass="ShipButton">
+                                <rect key="frame" x="349" y="232" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BeE-Ks-sia"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DZk-yq-QQ3" customClass="ShipButton">
+                                <rect key="frame" x="349" y="187" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dvE-Tl-gC6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZAh-2a-DjO" customClass="ShipButton">
+                                <rect key="frame" x="349" y="142" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fhc-z6-GEg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BbT-FN-8oa" customClass="ShipButton">
+                                <rect key="frame" x="349" y="502" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Hpx-40-z34"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t9m-5G-7GD" customClass="ShipButton">
+                                <rect key="frame" x="349" y="277" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tIf-6j-zHb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="foJ-li-xt0" customClass="ShipButton">
+                                <rect key="frame" x="349" y="322" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0k2-qI-oBd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ye5-gF-LCN" customClass="ShipButton">
+                                <rect key="frame" x="394" y="547" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JT1-s2-EBW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9vz-ll-4uf" customClass="ShipButton">
+                                <rect key="frame" x="394" y="367" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Yoa-2d-DyE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PjB-Nh-bhR" customClass="ShipButton">
+                                <rect key="frame" x="394" y="412" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="95r-1g-L40"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W4K-Ld-j1n" customClass="ShipButton">
+                                <rect key="frame" x="394" y="457" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TFS-tw-sAG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sqD-eL-Cob" customClass="ShipButton">
+                                <rect key="frame" x="394" y="232" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QCt-RE-FGI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UKk-f6-IrO" customClass="ShipButton">
+                                <rect key="frame" x="394" y="187" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EyX-W9-j4p"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dBe-ZW-fzZ" customClass="ShipButton">
+                                <rect key="frame" x="394" y="142" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="br2-oM-2w8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a7c-0L-03k" customClass="ShipButton">
+                                <rect key="frame" x="394" y="502" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Frm-ZA-0f5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fas-yI-RpO" customClass="ShipButton">
+                                <rect key="frame" x="394" y="277" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="smc-QG-wVS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xmg-c5-vpc" customClass="ShipButton">
+                                <rect key="frame" x="394" y="322" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bR4-zR-ItV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6aG-to-RGd" customClass="ShipButton">
+                                <rect key="frame" x="439" y="547" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nwS-nE-qnW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xi4-LD-3fV" customClass="ShipButton">
+                                <rect key="frame" x="439" y="367" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="COQ-6u-Tby"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="025-gf-iLm" customClass="ShipButton">
+                                <rect key="frame" x="439" y="412" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LCk-Cs-aWU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ohs-6w-gek" customClass="ShipButton">
+                                <rect key="frame" x="439" y="457" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tEt-cO-fV9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vHg-aS-UJk" customClass="ShipButton">
+                                <rect key="frame" x="439" y="232" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zfs-Ys-ywT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mvw-6r-HwR" customClass="ShipButton">
+                                <rect key="frame" x="439" y="187" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JcF-GD-heC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cxB-Ej-rwQ" customClass="ShipButton">
+                                <rect key="frame" x="439" y="142" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="T8Y-w2-Ghz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0zo-tn-hdd" customClass="ShipButton">
+                                <rect key="frame" x="439" y="502" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tg8-0X-fM2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iPT-mg-yp9" customClass="ShipButton">
+                                <rect key="frame" x="439" y="277" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hpI-7v-erV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9qf-P6-8KE" customClass="ShipButton">
+                                <rect key="frame" x="439" y="322" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="82m-p4-V03"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Rt-5J-Ime" customClass="ShipButton">
+                                <rect key="frame" x="484" y="547" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="15K-v7-5BM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="myp-Ra-1Le" customClass="ShipButton">
+                                <rect key="frame" x="484" y="367" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pJI-rl-M6l"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aMj-pX-5H3" customClass="ShipButton">
+                                <rect key="frame" x="484" y="412" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QWl-F6-PcH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="93U-0j-jGL" customClass="ShipButton">
+                                <rect key="frame" x="484" y="457" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JUH-94-11D"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="agm-vO-5AJ" customClass="ShipButton">
+                                <rect key="frame" x="484" y="232" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rE1-ti-pMO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ux1-GN-gQP" customClass="ShipButton">
+                                <rect key="frame" x="484" y="187" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RlJ-L8-7er"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ypN-OW-w2o" customClass="ShipButton">
+                                <rect key="frame" x="484" y="142" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="f6y-sz-q1W"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gQL-Aj-hZY" customClass="ShipButton">
+                                <rect key="frame" x="484" y="502" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Dom-Yt-P2h"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mc2-3N-U5k" customClass="ShipButton">
+                                <rect key="frame" x="484" y="277" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="C9z-UJ-3jZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QuV-qZ-SRc" customClass="ShipButton">
+                                <rect key="frame" x="484" y="322" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireOnIndex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0fS-Fa-ibb"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Bataille Navale BSX" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AHr-3N-Pvx">
+                                <rect key="frame" x="16" y="28" width="568" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="F4E-H7-7cQ" firstAttribute="top" secondItem="AHr-3N-Pvx" secondAttribute="bottom" constant="8" id="4wj-9P-2Et"/>
+                            <constraint firstItem="tYf-qv-QLD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Adf-n8-qaN"/>
+                            <constraint firstItem="tYf-qv-QLD" firstAttribute="top" secondItem="AHr-3N-Pvx" secondAttribute="bottom" constant="8" id="Rvn-bg-wYV"/>
+                            <constraint firstItem="vac-Jm-yBy" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Umo-OE-10u"/>
+                            <constraint firstItem="tYf-qv-QLD" firstAttribute="centerY" secondItem="F4E-H7-7cQ" secondAttribute="centerY" id="V0T-ER-UJo"/>
+                            <constraint firstItem="vac-Jm-yBy" firstAttribute="centerY" secondItem="T2b-iE-n0e" secondAttribute="centerY" id="eTa-3e-jeo"/>
+                            <constraint firstItem="vac-Jm-yBy" firstAttribute="top" secondItem="tYf-qv-QLD" secondAttribute="bottom" constant="8" id="gRj-N5-BbQ"/>
+                            <constraint firstItem="T2b-iE-n0e" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="oZA-ge-MEv"/>
+                            <constraint firstItem="AHr-3N-Pvx" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="qaC-5A-a9W"/>
+                            <constraint firstItem="T2b-iE-n0e" firstAttribute="top" secondItem="F4E-H7-7cQ" secondAttribute="bottom" constant="8" id="whp-Bf-bNd"/>
+                            <constraint firstItem="AHr-3N-Pvx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="wq7-Mx-AV3"/>
+                            <constraint firstItem="AHr-3N-Pvx" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="xzw-eX-RPx"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outletCollection property="allButtons" destination="Wym-rB-WOl" id="K1G-xo-1r1"/>
+                        <outletCollection property="allButtons" destination="Wym-rB-WOl" id="JUN-ji-SYR"/>
+                        <outletCollection property="allButtons" destination="B73-Vz-dbi" id="lDV-3C-jXG"/>
+                        <outletCollection property="allButtons" destination="YUb-fi-bFL" id="xxG-rp-N08"/>
+                        <outletCollection property="allButtons" destination="WSQ-RB-eFU" id="TNU-gn-tJf"/>
+                        <outletCollection property="allButtons" destination="qVv-R2-vi0" id="udB-cL-aHw"/>
+                        <outletCollection property="allButtons" destination="OmT-03-uJr" id="jyF-ms-Yno"/>
+                        <outletCollection property="allButtons" destination="ZAh-2a-DjO" id="1b4-dm-pam"/>
+                        <outletCollection property="allButtons" destination="dBe-ZW-fzZ" id="uCo-qc-Wci"/>
+                        <outletCollection property="allButtons" destination="cxB-Ej-rwQ" id="2gL-wp-n54"/>
+                        <outletCollection property="allButtons" destination="ypN-OW-w2o" id="d8u-xu-6aX"/>
+                        <outletCollection property="allButtons" destination="99F-jk-9Jl" id="uFn-9S-bbw"/>
+                        <outletCollection property="allButtons" destination="LDh-LE-Kzv" id="hxR-bM-aiq"/>
+                        <outletCollection property="allButtons" destination="DgX-jp-H4z" id="jmq-to-HDp"/>
+                        <outletCollection property="allButtons" destination="Zad-M0-wHq" id="fRN-UD-8m5"/>
+                        <outletCollection property="allButtons" destination="TDW-AH-5bj" id="C1q-Ld-VcV"/>
+                        <outletCollection property="allButtons" destination="ndT-F9-XTU" id="DGh-MN-RAL"/>
+                        <outletCollection property="allButtons" destination="DZk-yq-QQ3" id="oE2-RN-xFG"/>
+                        <outletCollection property="allButtons" destination="UKk-f6-IrO" id="Y0f-zq-3Xz"/>
+                        <outletCollection property="allButtons" destination="Mvw-6r-HwR" id="YRT-DB-fRg"/>
+                        <outletCollection property="allButtons" destination="Ux1-GN-gQP" id="T8V-tD-jpN"/>
+                        <outletCollection property="allButtons" destination="o7J-va-d0N" id="LML-yH-h64"/>
+                        <outletCollection property="allButtons" destination="XJI-vB-Qw4" id="ttM-lz-jCf"/>
+                        <outletCollection property="allButtons" destination="pdX-Wv-ppG" id="taU-dT-0lF"/>
+                        <outletCollection property="allButtons" destination="icM-r1-9CL" id="fgL-Ut-STZ"/>
+                        <outletCollection property="allButtons" destination="SaI-bQ-4CF" id="y4v-rF-7lQ"/>
+                        <outletCollection property="allButtons" destination="BZm-EQ-G15" id="O9s-l2-3wY"/>
+                        <outletCollection property="allButtons" destination="l6c-Kw-17M" id="rgk-bc-cte"/>
+                        <outletCollection property="allButtons" destination="sqD-eL-Cob" id="IMK-i3-nxR"/>
+                        <outletCollection property="allButtons" destination="vHg-aS-UJk" id="LlI-JP-a3C"/>
+                        <outletCollection property="allButtons" destination="agm-vO-5AJ" id="M59-At-sgb"/>
+                        <outletCollection property="allButtons" destination="tuQ-zU-XSF" id="TF7-pn-o0c"/>
+                        <outletCollection property="allButtons" destination="lUz-8i-ePg" id="vm3-jE-eym"/>
+                        <outletCollection property="allButtons" destination="mFp-FJ-Kqe" id="GEA-Hp-Bgr"/>
+                        <outletCollection property="allButtons" destination="mar-pg-EXk" id="xkk-dD-LdU"/>
+                        <outletCollection property="allButtons" destination="WnE-AR-ed9" id="dma-H1-iEZ"/>
+                        <outletCollection property="allButtons" destination="dIh-j3-m1C" id="rkX-N3-e9Z"/>
+                        <outletCollection property="allButtons" destination="t9m-5G-7GD" id="8st-dZ-Zd7"/>
+                        <outletCollection property="allButtons" destination="Fas-yI-RpO" id="ZY7-Vl-2WC"/>
+                        <outletCollection property="allButtons" destination="iPT-mg-yp9" id="Ssl-9T-Szx"/>
+                        <outletCollection property="allButtons" destination="mc2-3N-U5k" id="5cv-ko-bo9"/>
+                        <outletCollection property="allButtons" destination="ebp-u8-K1d" id="zzj-2d-sFq"/>
+                        <outletCollection property="allButtons" destination="fX2-GT-lB9" id="G6s-nh-0BN"/>
+                        <outletCollection property="allButtons" destination="mj9-Tf-5cF" id="Sw8-wB-nby"/>
+                        <outletCollection property="allButtons" destination="gZX-bY-Z4f" id="S0b-LZ-Ved"/>
+                        <outletCollection property="allButtons" destination="Zqi-B8-60p" id="sqF-LQ-RqZ"/>
+                        <outletCollection property="allButtons" destination="y1O-PA-gMy" id="bJ4-q5-gzX"/>
+                        <outletCollection property="allButtons" destination="foJ-li-xt0" id="bAf-eg-pDK"/>
+                        <outletCollection property="allButtons" destination="xmg-c5-vpc" id="404-Mk-JNg"/>
+                        <outletCollection property="allButtons" destination="9qf-P6-8KE" id="rfb-fu-2pX"/>
+                        <outletCollection property="allButtons" destination="QuV-qZ-SRc" id="TnC-sP-WDY"/>
+                        <outletCollection property="allButtons" destination="5nm-qr-zbM" id="4Ct-ps-e5k"/>
+                        <outletCollection property="allButtons" destination="CZg-oE-jcN" id="7P7-Oz-XKt"/>
+                        <outletCollection property="allButtons" destination="tIq-FI-u4p" id="Jvy-jL-gTf"/>
+                        <outletCollection property="allButtons" destination="iUo-Rg-sXx" id="3am-ll-Urm"/>
+                        <outletCollection property="allButtons" destination="51M-V9-8oJ" id="Qwa-ec-NpF"/>
+                        <outletCollection property="allButtons" destination="Cq4-9i-j1f" id="ifN-mQ-FgZ"/>
+                        <outletCollection property="allButtons" destination="Lgb-OB-Bm6" id="WUa-rF-dEK"/>
+                        <outletCollection property="allButtons" destination="9vz-ll-4uf" id="2FZ-zK-X8h"/>
+                        <outletCollection property="allButtons" destination="xi4-LD-3fV" id="39T-1u-0c8"/>
+                        <outletCollection property="allButtons" destination="myp-Ra-1Le" id="XVd-rs-k4d"/>
+                        <outletCollection property="allButtons" destination="VmD-Tu-dAl" id="PpA-VF-Wh7"/>
+                        <outletCollection property="allButtons" destination="bMH-aG-9LL" id="tXV-VA-68D"/>
+                        <outletCollection property="allButtons" destination="vL0-ef-dBC" id="Q3z-7c-1ir"/>
+                        <outletCollection property="allButtons" destination="mFr-ay-k0a" id="X9r-bE-0A2"/>
+                        <outletCollection property="allButtons" destination="yFh-UE-1zO" id="Pmj-ll-C6f"/>
+                        <outletCollection property="allButtons" destination="YN6-Xf-FZW" id="kfB-a9-jx3"/>
+                        <outletCollection property="allButtons" destination="abv-dx-UMU" id="HOt-Ay-V2d"/>
+                        <outletCollection property="allButtons" destination="PjB-Nh-bhR" id="1s6-qu-Sjf"/>
+                        <outletCollection property="allButtons" destination="025-gf-iLm" id="H95-f3-kwT"/>
+                        <outletCollection property="allButtons" destination="aMj-pX-5H3" id="9P5-ha-EB7"/>
+                        <outletCollection property="allButtons" destination="9cW-tP-6P2" id="JhE-CY-Fed"/>
+                        <outletCollection property="allButtons" destination="X6F-nw-MHG" id="v1Z-Yf-bqW"/>
+                        <outletCollection property="allButtons" destination="nXu-fE-KTE" id="adO-Tg-Qjz"/>
+                        <outletCollection property="allButtons" destination="Tax-cA-kmP" id="AWZ-8X-elK"/>
+                        <outletCollection property="allButtons" destination="kZG-lk-dhj" id="wvV-np-dST"/>
+                        <outletCollection property="allButtons" destination="Cep-z8-L5o" id="R96-Ui-rpn"/>
+                        <outletCollection property="allButtons" destination="2xM-KP-wT7" id="49w-CI-FiN"/>
+                        <outletCollection property="allButtons" destination="W4K-Ld-j1n" id="E0H-GG-1uq"/>
+                        <outletCollection property="allButtons" destination="ohs-6w-gek" id="EM2-eb-SGF"/>
+                        <outletCollection property="allButtons" destination="93U-0j-jGL" id="nG8-x9-aoj"/>
+                        <outletCollection property="allButtons" destination="GJy-xy-18k" id="5BQ-u5-N5X"/>
+                        <outletCollection property="allButtons" destination="I8b-Hv-ODm" id="q2D-sK-pXB"/>
+                        <outletCollection property="allButtons" destination="NJC-5o-Ujs" id="nuH-xw-yp2"/>
+                        <outletCollection property="allButtons" destination="iwI-E5-34X" id="fQD-kk-fai"/>
+                        <outletCollection property="allButtons" destination="xpe-FK-uLG" id="sCP-hf-SOQ"/>
+                        <outletCollection property="allButtons" destination="Yis-X9-DC9" id="D6c-a9-loV"/>
+                        <outletCollection property="allButtons" destination="BbT-FN-8oa" id="Ih7-bg-0O8"/>
+                        <outletCollection property="allButtons" destination="a7c-0L-03k" id="C85-kq-pOM"/>
+                        <outletCollection property="allButtons" destination="0zo-tn-hdd" id="6Na-A3-csn"/>
+                        <outletCollection property="allButtons" destination="gQL-Aj-hZY" id="PMT-Vz-JNR"/>
+                        <outletCollection property="allButtons" destination="X6f-PY-npq" id="RJp-r5-cGj"/>
+                        <outletCollection property="allButtons" destination="1hj-za-MH0" id="Jjr-n3-Jvg"/>
+                        <outletCollection property="allButtons" destination="PfU-ME-xf0" id="duG-sU-UAe"/>
+                        <outletCollection property="allButtons" destination="eSX-H7-U3d" id="Dd4-cB-lig"/>
+                        <outletCollection property="allButtons" destination="hV8-GO-RKL" id="b5M-6q-m7d"/>
+                        <outletCollection property="allButtons" destination="xEw-bP-r4e" id="rr4-4q-iVC"/>
+                        <outletCollection property="allButtons" destination="NxB-bt-fgH" id="HBK-Q9-81K"/>
+                        <outletCollection property="allButtons" destination="Ye5-gF-LCN" id="SWB-XK-9ds"/>
+                        <outletCollection property="allButtons" destination="6aG-to-RGd" id="n2h-9M-fzr"/>
+                        <outletCollection property="allButtons" destination="7Rt-5J-Ime" id="PsC-W3-RUj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
