@@ -10,13 +10,16 @@
 
 #define SOUS_MARIN 1
 #define NBSHIP 5
+#define NBTYPE 4
 #define NBGRID 100
 #define SOUTH_DIRECTION 10
 #define EAST_DIRECTION 1
 #define LAST_LINE 89
 
 @implementation DataManager
-
+{
+    NSUInteger nbShipSunk;
+}
 static DataManager *sharedDataManager = nil;
 
 #pragma mark - Instance Methods
@@ -43,7 +46,9 @@ static DataManager *sharedDataManager = nil;
     
     if (self)
     {
-        for (int i = 0; i < NBSHIP; i++)
+        _shipArray = [[NSMutableArray alloc] init];
+        
+        for (int i = 0; i < NBTYPE; i++)
         {
             [_shipArray addObject:[[Ship alloc] initWithType:i]];
             
@@ -69,6 +74,19 @@ static DataManager *sharedDataManager = nil;
  */
 -(void)reset
 {
+    for (int i = 0; i > NBGRID; i++)
+    {
+        [_grid replaceObjectAtIndex:i withObject:nil];
+    }
+    
+    nbShipSunk = 0;
+    
+    [self replaceShips];
+}
+
+-(void)replaceShips
+{
+    NSMutableArray *tempIndexes = [[NSMutableArray alloc] init];
     NSInteger length = 0;
     int randomval;
     BOOL isSouthDirection = NO;
@@ -83,7 +101,17 @@ static DataManager *sharedDataManager = nil;
             isSouthDirection = (BOOL)randomval;
             index = rand() % 100;
         }
-        
+        else
+        {
+            [[_shipArray objectAtIndex:i] setLength:length];
+            [[_shipArray objectAtIndex:i] setIsVertical:isSouthDirection];
+            [[_shipArray objectAtIndex:i] setOriginPoint:index];
+            tempIndexes = [self getAllIndexForShipAtIndex:index];
+            for (int j = 0; j < length; j++)
+            {
+                [_grid replaceObjectAtIndex:[tempIndexes[j] integerValue] withObject:[_shipArray objectAtIndex:i]];
+            }
+        }
     }
 }
 
@@ -184,10 +212,17 @@ static DataManager *sharedDataManager = nil;
  *  @param _index index of the touch
  *  @return array of indexes if the ship is sunk / nil if it's only touch
  */
--(NSArray *)shipTouch:(NSInteger)_index
+-(NSMutableArray *)shipTouch:(NSInteger)_index
 {
+    Ship *tempShip =[_grid objectAtIndex:_index];
+    [tempShip setNbCaseTouch:[tempShip nbCaseTouch]+1];
     
-    return @[];
+    if ( [tempShip nbCaseTouch] == [tempShip length])
+    {
+        nbShipSunk++;
+        return [self getAllIndexForShipAtIndex:_index];
+    }
+    return nil;
 }
 
 /**
@@ -197,22 +232,66 @@ static DataManager *sharedDataManager = nil;
  *  @param _index ship index wanted
  *  @return array of indexes if the ship is sunk / nil if it's only touch
  */
--(NSArray *)getAllIndexForShipAtIndex:(NSInteger)_index
+-(NSMutableArray *)getAllIndexForShipAtIndex:(NSInteger)_index
 {
+    NSMutableArray *tempIndexes = [[NSMutableArray alloc] init];
+    NSUInteger length = [[_grid objectAtIndex:_index] length];
+    BOOL isSouthDirection = [[_grid objectAtIndex:_index] isVertical];
+    NSUInteger direction;
+    NSUInteger newIndex = _index;
     
-    return @[];
+    for (int i = 0; i < length; i++)
+    {
+        
+        if (isSouthDirection)
+        {
+            direction = SOUTH_DIRECTION;
+        }
+        else
+        {
+            direction = EAST_DIRECTION;
+        }
+        newIndex += direction;
+        
+        [tempIndexes[i] addObject:[[NSString alloc] initWithFormat:@"%ld", newIndex]];
+    }
+    
+    return tempIndexes;
 }
 
 /**
- *  @author François  Juteau, 15-08-05 02:08:58
+ *  @author François  Juteau, 15-08-05 06:08:24
  *
  *  @brief  Get all indexes for all the ships in game
  *  @return array of all the indexes
  */
--(NSArray *)getAllIndexesForAllShips
+-(NSMutableArray *)getAllIndexesForAllShips
 {
+    NSMutableArray *indexes = [[NSMutableArray alloc] init];
     
-    return @[];
+    for (int i = 0; i < NBSHIP; i++)
+    {
+        [indexes addObjectsFromArray:[self getAllIndexForShipAtIndex:[[_shipArray objectAtIndex:i] originPoint]]];
+    }
+    return indexes;
+}
+
+/**
+ *  @author François  Juteau, 15-08-05 07:08:40
+ *
+ *  @brief  Return the game status
+ *  @return true if the game is ended
+ */
+-(BOOL)isEndOfGame
+{
+    if (nbShipSunk == NBSHIP)
+    {
+        return YES;
+    }
+    else
+    {
+        return NO;
+    }
 }
 
 @end

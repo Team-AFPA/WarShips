@@ -86,7 +86,7 @@
  *  @param _index index of the touch
  *  @return array of indexes if the ship is sunk / nil if it's only touch
  */
--(NSArray *)shipTouch:(NSInteger)_index;
+-(NSMutableArray *)shipTouch:(NSInteger)_index;
 
 /**
  *  @author François  Juteau, 15-08-05 02:08:58
@@ -95,7 +95,7 @@
  *  @param _index ship index wanted
  *  @return array of indexes if the ship is sunk / nil if it's only touch
  */
--(NSArray *)getAllIndexForShipAtIndex:(NSInteger)_index;
+-(NSMutableArray *)getAllIndexForShipAtIndex:(NSInteger)_index;
 
 /**
  *  @author François  Juteau, 15-08-05 02:08:58
@@ -103,6 +103,14 @@
  *  @brief  Get all indexes for all the ships in game
  *  @return array of all the indexes
  */
--(NSArray *)getAllIndexesForAllShips;
+-(NSMutableArray *)getAllIndexesForAllShips;
+
+/**
+ *  @author François  Juteau, 15-08-05 07:08:40
+ *
+ *  @brief  Return the game status
+ *  @return true if the game is ended
+ */
+-(BOOL)isEndOfGame;
 
 @end
