@@ -16,10 +16,32 @@
 #define EAST_DIRECTION 1
 #define LAST_LINE 89
 
+@interface DataManager ()
+    // ====================== //
+    // ----- PROPERTIES ----- //
+    // ====================== //
+    #pragma mark - Properties
+    /**
+    *  @author François  Juteau, 15-08-05 00:08:07
+    *
+    *  @brief  array of ships positions
+    */
+    @property (strong, nonatomic, readonly) NSMutableArray *grid;
+
+    /**
+     *  @author François  Juteau, 15-08-05 00:08:03
+     *
+     *  @brief  array of every ships
+     */
+    @property (strong, nonatomic, readonly) NSMutableArray *shipArray;
+@end
+
+
 @implementation DataManager
 {
     NSUInteger nbShipSunk;
 }
+
 static DataManager *sharedDataManager = nil;
 
 #pragma mark - Instance Methods
