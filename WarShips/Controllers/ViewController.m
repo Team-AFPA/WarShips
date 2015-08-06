@@ -46,6 +46,11 @@
 }
 
 
+/*!
+ *  @author Thibault Le Cornec
+ *  
+ *  @brief  Update labels with the value of countdown
+ */
 - (void)updateLabels
 {
     [labelNbShots setText:[NSString stringWithFormat:@"Nombre de tirs : %d", nbShots]];
@@ -133,6 +138,11 @@
 }
 
 
+/*!
+ *  @author Thibault Le Cornec
+ *  
+ *  @brief  Launch a new party. Reset to countdown, update the labels, reset the buttons, get the indexes of the new positions for the ships, set the buttons 
+ */
 - (IBAction)newGame
 {
     [sharedDataManager reset];
@@ -149,6 +159,11 @@
 }
 
 
+/*!
+ *  @author Thibault Le Cornec
+ *  
+ *  @brief  Reset the button at there default properties
+ */
 -(void)resetButtons
 {
     for (ShipButton *button in allButtons)
@@ -161,6 +176,13 @@
 }
 
 
+/*!
+ *  @author Thibault Le Cornec
+ *  
+ *  @brief  Set the buttons where the ships are
+ *
+ *  @param indexesOfShips Indexes where are the ships
+ */
 -(void)setButtonsAtIndexes:(NSArray*)indexesOfShips
 {
      for (NSUInteger i =0; i < [indexesOfShips count]; i++)
