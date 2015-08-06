@@ -112,7 +112,7 @@ static DataManager *sharedDataManager = nil;
             length = [[_shipArray objectAtIndex:i] length];
             randomval = arc4random() % 2;
             isSouthDirection = (BOOL)randomval;
-            index = arc4random() % 95;
+            index = arc4random() % NBGRID;
             NSLog(@"REPLACE SHIP : length : %ld, isSouthDirection : %d, index : %ld",length, isSouthDirection, index);
         }
         [[_shipArray objectAtIndex:i] affectShip:isSouthDirection originPoint:index];
@@ -310,6 +310,7 @@ static DataManager *sharedDataManager = nil;
 }
 
 #pragma mark - DEBUG
+
 
 -(NSUInteger)getShipType:(NSUInteger)_index
 {
