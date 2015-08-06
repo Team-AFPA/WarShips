@@ -49,7 +49,7 @@
 /*!
  *  @author Thibault Le Cornec
  *  
- *  @brief  Update labels with the value of countdown
+ *  @brief  Update labels with the value of countd own
  */
 - (void)updateLabels
 {
