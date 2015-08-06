@@ -10,7 +10,7 @@
 #import "ShipButton.h"
 #import "DataManager.h"
 
-#define DEBUG_MODE 0
+#define DEBUG_MODE 1
 
 @interface ViewController ()
     @property DataManager *sharedDataManager;
@@ -99,14 +99,14 @@
             
             if (isEndOfGame)
             {
+                
                 NSString *messageWinner = [NSString stringWithFormat:@"Vous avez trouvé tout les bateaux !\nVotre score : %d", nbShots];
                 UIAlertView *win = [[UIAlertView alloc] initWithTitle:@"Bravo !" 
                                                               message:messageWinner 
-                                                             delegate:nil 
+                                                             delegate:self 
                                                     cancelButtonTitle:@"Ok"
                                                     otherButtonTitles:nil];
                 [win show];
-                [self newGame];
             }
         }
         else
@@ -124,6 +124,12 @@
     [self updateLabels];
     // Désactivation du bouton pour que l'utilisateur ne puisse "tirer" 2 fois au même endroit
     [sender setEnabled:NO];
+}
+
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+   [self newGame];
 }
 
 
