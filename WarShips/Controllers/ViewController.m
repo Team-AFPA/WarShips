@@ -13,6 +13,11 @@
 #define DEBUG_MODE 0
 
 @interface ViewController ()
+{
+    int nbShots;                 // Nombre de tirs effectué par le joueur
+    int nbPartsOfShipsTouched;   // Nombre de fois qu'un tir a touché un bateau
+    int nbShipsSunken;           // Nombre de bateaux coulés
+}
     @property DataManager *sharedDataManager;
 @end
 

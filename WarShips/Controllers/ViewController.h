@@ -9,11 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController <UIAlertViewDelegate>
-{
-    int nbShots;                // Nombre de tirs effectué par le joueur
-    int nbPartsOfShipsTouched;   // Nombre de fois qu'un tir a touché un bateau
-    int nbShipsSunken;           // Nombre de bateaux coulés
-}
 
 @property (strong, nonatomic) IBOutlet UILabel *labelNbShots;
 @property (strong, nonatomic) IBOutlet UILabel *labelNbPartsOfShipsTouched;
