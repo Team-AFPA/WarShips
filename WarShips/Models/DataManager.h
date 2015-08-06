@@ -11,25 +11,10 @@
 
 @interface DataManager : NSObject
 
-#pragma mark - Properties
-
-/**
- *  @author François  Juteau, 15-08-05 00:08:07
- *
- *  @brief  array of ships positions
- */
-@property (strong, nonatomic, readonly) NSMutableArray *grid;
-
-/**
- *  @author François  Juteau, 15-08-05 00:08:03
- *
- *  @brief  array of every ships
- */
-@property (strong, nonatomic, readonly) NSMutableArray *shipArray;
-
-
+// =================== //
+// ----- METHODS ----- //
+// =================== //
 #pragma mark - Instance Methods
-
 /**
  *  @author François  Juteau, 15-08-05 00:08:51
  *
@@ -40,7 +25,6 @@
 
 
 #pragma mark - Inits & resets
-
 /**
  *  @author François  Juteau, 15-08-05 02:08:52
  *
@@ -50,7 +34,6 @@
 
 
 #pragma mark - Extern methods
-
 /**
  *  @author François  Juteau, 15-08-05 02:08:54
  *
@@ -78,7 +61,6 @@
 
 
 #pragma mark - DEBUG
-
 /**
  *  @author François  Juteau, 15-08-06 00:08:43
  *
