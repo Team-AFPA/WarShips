@@ -39,7 +39,7 @@
 +(DataManager*)sharedDataManager;
 
 
-#pragma mark - Methods
+#pragma mark - Inits & resets
 
 /**
  *  @author François  Juteau, 15-08-05 02:08:52
@@ -48,36 +48,8 @@
  */
 -(void)reset;
 
-/**
- *  @author François  Juteau, 15-08-05 02:08:09
- *
- *  @brief  Check if all the ship indexes are OK
- *  @param _index     ship index
- *  @param _direction ship direction
- *  @param _length    ship length
- *  @return true if the ship placement is OK
- */
--(BOOL)isShipPlacementOk:(NSInteger)_index withDirection:(BOOL)_direction withLength:(NSInteger)_length;
 
-/**
- *  @author François  Juteau, 15-08-05 02:08:12
- *
- *  @brief  Check if the case is empty
- *  @param _index index to check
- *  @return true if empty
- */
--(BOOL)isCaseEmpty:(NSInteger)_index;
-
-
-/**
- *  @author François  Juteau, 15-08-05 05:08:02
- *
- *  @brief  Check if the next ship index will be displayed in another line
- *  @param _index            next index
- *  @param _isSouthDirection direction of the next index
- *  @return true if the ship is in parts
- */
--(BOOL)isShipExitsGrid:(NSInteger)_index withDirection:(BOOL)_isSouthDirection;
+#pragma mark - Extern methods
 
 /**
  *  @author François  Juteau, 15-08-05 02:08:54
@@ -87,15 +59,6 @@
  *  @return array of indexes if the ship is sunk / nil if it's only touch
  */
 -(NSMutableArray *)shipTouch:(NSInteger)_index;
-
-/**
- *  @author François  Juteau, 15-08-05 02:08:58
- *
- *  @brief  Get all indexes for the ship in param
- *  @param _index ship index wanted
- *  @return array of indexes if the ship is sunk / nil if it's only touch
- */
--(NSMutableArray *)getAllIndexForShipAtIndex:(NSInteger)_index;
 
 /**
  *  @author François  Juteau, 15-08-05 02:08:58
@@ -116,6 +79,13 @@
 
 #pragma mark - DEBUG
 
+/**
+ *  @author François  Juteau, 15-08-06 00:08:43
+ *
+ *  @brief  Get the ship type for the ship in parameter
+ *  @param _index ship index
+ *  @return ship type
+ */
 -(NSUInteger)getShipType:(NSUInteger)_index;
 
 @end

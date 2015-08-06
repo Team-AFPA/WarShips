@@ -40,6 +40,9 @@ static DataManager *sharedDataManager = nil;
     return sharedDataManager;
 }
 
+
+#pragma mark - Inits & resets
+
 /**
  *  @author François  Juteau, 15-08-05 07:08:29
  *
@@ -75,9 +78,6 @@ static DataManager *sharedDataManager = nil;
     return self;
 }
 
-
-#pragma mark - Methods
-
 /**
  *  @author François  Juteau, 15-08-05 02:08:52
  *
@@ -85,7 +85,7 @@ static DataManager *sharedDataManager = nil;
  */
 -(void)reset
 {
-    for (int i = 0; i > NBGRID; i++)
+    for (int i = 0; i < NBGRID; i++)
     {
         [_grid replaceObjectAtIndex:i withObject:@""];
     }
@@ -94,6 +94,67 @@ static DataManager *sharedDataManager = nil;
     
     [self replaceShips];
 }
+
+
+#pragma mark - External Methods
+
+/**
+ *  @author François  Juteau, 15-08-05 02:08:54
+ *
+ *  @brief  Impact the ship touch to the ship properties
+ *  @param _index index of the touch
+ *  @return array of indexes if the ship is sunk / nil if it's only touch
+ */
+-(NSMutableArray *)shipTouch:(NSInteger)_index
+{
+    Ship *tempShip =[_grid objectAtIndex:_index];
+    [tempShip setNbCaseTouch:[tempShip nbCaseTouch]+1];
+    
+    if ( [tempShip nbCaseTouch] == [tempShip length])
+    {
+        nbShipSunk++;
+        return [self getAllIndexForShipAtIndex:[[_grid objectAtIndex:_index] originPoint]];
+    }
+    return nil;
+}
+
+/**
+ *  @author François  Juteau, 15-08-05 06:08:24
+ *
+ *  @brief  Get all indexes for all the ships in game
+ *  @return array of all the indexes
+ */
+-(NSMutableArray *)getAllIndexesForAllShips
+{
+    NSMutableArray *indexes = [[NSMutableArray alloc] init];
+    
+    for (int i = 0; i < NBSHIP; i++)
+    {
+        [indexes addObjectsFromArray:[self getAllIndexForShipAtIndex:[[_shipArray objectAtIndex:i] originPoint]]];
+    }
+    return indexes;
+}
+
+/**
+ *  @author François  Juteau, 15-08-05 07:08:40
+ *
+ *  @brief  Return the game status
+ *  @return true if the game is ended
+ */
+-(BOOL)isEndOfGame
+{
+    if (nbShipSunk == NBSHIP)
+    {
+        return YES;
+    }
+    else
+    {
+        return NO;
+    }
+}
+
+
+#pragma mark - Intern methods
 
 -(void)replaceShips
 {
@@ -216,26 +277,6 @@ static DataManager *sharedDataManager = nil;
 }
 
 /**
- *  @author François  Juteau, 15-08-05 02:08:54
- *
- *  @brief  Impact the ship touch to the ship properties
- *  @param _index index of the touch
- *  @return array of indexes if the ship is sunk / nil if it's only touch
- */
--(NSMutableArray *)shipTouch:(NSInteger)_index
-{
-    Ship *tempShip =[_grid objectAtIndex:_index];
-    [tempShip setNbCaseTouch:[tempShip nbCaseTouch]+1];
-    
-    if ( [tempShip nbCaseTouch] == [tempShip length])
-    {
-        nbShipSunk++;
-        return [self getAllIndexForShipAtIndex:[[_grid objectAtIndex:_index] originPoint]];
-    }
-    return nil;
-}
-
-/**
  *  @author François  Juteau, 15-08-05 02:08:58
  *
  *  @brief  Get all indexes for the ship in param
@@ -262,41 +303,14 @@ static DataManager *sharedDataManager = nil;
     return tempIndexes;
 }
 
-/**
- *  @author François  Juteau, 15-08-05 06:08:24
- *
- *  @brief  Get all indexes for all the ships in game
- *  @return array of all the indexes
- */
--(NSMutableArray *)getAllIndexesForAllShips
-{
-    NSMutableArray *indexes = [[NSMutableArray alloc] init];
-    
-    for (int i = 0; i < NBSHIP; i++)
-    {
-        [indexes addObjectsFromArray:[self getAllIndexForShipAtIndex:[[_shipArray objectAtIndex:i] originPoint]]];
-    }
-    return indexes;
-}
 
 /**
- *  @author François  Juteau, 15-08-05 07:08:40
+ *  @author François  Juteau, 15-08-06 00:08:15
  *
- *  @brief  Return the game status
- *  @return true if the game is ended
+ *  @brief  Get the difference to add to an index to get to the next index
+ *  @param _isSouthDirection direction index
+ *  @return direction value
  */
--(BOOL)isEndOfGame
-{
-    if (nbShipSunk == NBSHIP)
-    {
-        return YES;
-    }
-    else
-    {
-        return NO;
-    }
-}
-
 -(NSUInteger)getDirection:(BOOL)_isSouthDirection
 {
     if (_isSouthDirection)
@@ -309,12 +323,20 @@ static DataManager *sharedDataManager = nil;
     }
 }
 
+
 #pragma mark - DEBUG
 
-
+/**
+ *  @author François  Juteau, 15-08-06 00:08:43
+ *
+ *  @brief  Get the ship type for the ship in parameter
+ *  @param _index ship index
+ *  @return ship type
+ */
 -(NSUInteger)getShipType:(NSUInteger)_index
 {
     Ship *tempShip = [_grid objectAtIndex:_index];
     return [tempShip idType];
 }
+
 @end
