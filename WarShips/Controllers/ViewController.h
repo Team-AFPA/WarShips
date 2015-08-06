@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <UIAlertViewDelegate>
 {
     int nbShots;                // Nombre de tirs effectué par le joueur
     int nbPartsOfShipsTouched;   // Nombre de fois qu'un tir a touché un bateau
