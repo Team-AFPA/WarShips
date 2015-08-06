@@ -174,7 +174,6 @@ static DataManager *sharedDataManager = nil;
             randomval = arc4random() % 2;
             isSouthDirection = (BOOL)randomval;
             index = arc4random() % NBGRID;
-            NSLog(@"REPLACE SHIP : length : %ld, isSouthDirection : %d, index : %ld",length, isSouthDirection, index);
         }
         [[_shipArray objectAtIndex:i] affectShip:isSouthDirection originPoint:index];
         direction = [self getDirection:isSouthDirection];
