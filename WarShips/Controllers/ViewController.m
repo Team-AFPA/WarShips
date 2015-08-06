@@ -10,7 +10,7 @@
 #import "ShipButton.h"
 #import "DataManager.h"
 
-#define DEBUG_MODE 1
+#define DEBUG_MODE 0
 
 @interface ViewController ()
     @property DataManager *sharedDataManager;
