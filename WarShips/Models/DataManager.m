@@ -156,6 +156,11 @@ static DataManager *sharedDataManager = nil;
 
 #pragma mark - Intern methods
 
+/**
+ *  @author François  Juteau, 15-08-06 02:08:48
+ *
+ *  @brief  Manage all ships placement
+ */
 -(void)replaceShips
 {
     NSUInteger length = 0;
