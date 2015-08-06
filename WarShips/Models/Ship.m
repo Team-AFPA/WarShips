@@ -10,13 +10,25 @@
 
 @implementation Ship
 
+static NSArray *lengthTab; // Array de la taille des bateaux
+
 
 -(id) initWithType:(NSInteger)_type // Constructeur de Ship
 {
     self = [super init];
-    lengthTab= @[@"2", @"3", @"4", @"5"]; // Array de la taille des bateaux
-    _idType = _type;
-    _length = [lengthTab[_idType] integerValue]; // initialistaion de la longueur d'un bateau
+    
+    if (self)
+    {
+        if (lengthTab == nil)
+        {
+            lengthTab = [NSArray arrayWithObjects:@"2", @"3", @"4", @"5", nil];
+        }
+        
+        _idType = _type;
+        _length = [lengthTab[_idType] integerValue]; // initialistaion de la longueur d'un bateau
+
+    }
+
     return self;
 }
 

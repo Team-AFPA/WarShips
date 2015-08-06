@@ -31,7 +31,7 @@
 
 -(void) setIsThereAShip:(BOOL)_bool
 {
-    isThereAShip= _bool;
+    isThereAShip = _bool;
 }
 
 @end
