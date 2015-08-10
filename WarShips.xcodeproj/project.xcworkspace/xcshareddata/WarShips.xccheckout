@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>DF44F1F1-93E4-43BB-B59A-5DA6CE70C1AE</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>WarShips</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>B9081B50FFB3902AAD5D254062CE17272C25692A</key>
 		<string>https://github.com/Team-AFPA/WarShips.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>WarShips.xcodeproj/project.xcworkspace</string>
+	<string>WarShips.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>B9081B50FFB3902AAD5D254062CE17272C25692A</key>
@@ -34,7 +34,7 @@
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>B9081B50FFB3902AAD5D254062CE17272C25692A</string>
 			<key>IDESourceControlWCCName</key>
-			<string>WarShips-ObjC</string>
+			<string>WarShips</string>
 		</dict>
 	</array>
 </dict>
