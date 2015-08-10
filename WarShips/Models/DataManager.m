@@ -14,6 +14,7 @@
 #define NBGRID 100
 #define SOUTH_DIRECTION 10
 #define EAST_DIRECTION 1
+#define FIRST_LINE 10
 #define LAST_LINE 89
 #define NB_LINES 10
 #define NB_COLONS 10
@@ -114,9 +115,11 @@ static DataManager *sharedDataManager = nil;
         [_grid replaceObjectAtIndex:i withObject:@""];
     }
     
+    self.isHeadshotEnable = YES;
+    self.level = 1;
     nbShipSunk = 0;
     
-    [self replaceShips];
+    [self placeShips];
 }
 
 
@@ -134,10 +137,11 @@ static DataManager *sharedDataManager = nil;
     Ship *tempShip =[_grid objectAtIndex:_index];
     [tempShip setNbCaseTouch:[tempShip nbCaseTouch]+1];
     
-    if ([tempShip isShipSunk] || [tempShip isHeadshot:_index])
+    if ([tempShip isShipSunk] || ([tempShip isHeadshot:_index] && self.isHeadshotEnable))
     {
+        [tempShip setIsSunk:YES];
         nbShipSunk++;
-        return [self getAllIndexForShipAtIndex:[[_grid objectAtIndex:_index] originPoint]];
+        return [self getAllIndexForShipAtIndex:[tempShip originPoint]];
     }
     return nil;
 }
@@ -154,7 +158,10 @@ static DataManager *sharedDataManager = nil;
     
     for (int i = 0; i < NBSHIP; i++)
     {
-        [indexes addObjectsFromArray:[self getAllIndexForShipAtIndex:[[_shipArray objectAtIndex:i] originPoint]]];
+        if (![[_shipArray objectAtIndex:i] isSunk])
+        {
+            [indexes addObjectsFromArray:[self getAllIndexForShipAtIndex:[[_shipArray objectAtIndex:i] originPoint]]];
+        }
     }
     return indexes;
 }
@@ -185,17 +192,22 @@ static DataManager *sharedDataManager = nil;
  *
  *  @brief  Manage all ships placement
  */
--(void)replaceShips
+-(void)placeShips
 {
+    Ship *tempShip;
     NSUInteger length = 0;
     int randomPositive, randomDir;
     BOOL isSouthDirection = NO;
     BOOL isPositive = NO;
     NSUInteger index = 0;
-    NSUInteger direction;
+    NSInteger direction;
+    
+    
     
     for (int i = 0; i < NBSHIP; i++)
     {
+        tempShip = [_shipArray objectAtIndex:i];
+        
         length = 0;
         
         while(![self isShipPlacementOk:index
@@ -203,7 +215,7 @@ static DataManager *sharedDataManager = nil;
                           withPositive:isPositive
                             withLength:length])
         {
-            length = [[_shipArray objectAtIndex:i] length];
+            length = [tempShip length];
             randomDir = arc4random() % 2;
             isSouthDirection = (BOOL)randomDir;
             randomPositive = arc4random() % 2;
@@ -211,16 +223,82 @@ static DataManager *sharedDataManager = nil;
             
             index = arc4random() % NBGRID;
         }
-        [[_shipArray objectAtIndex:i] affectShip:isSouthDirection
+        [tempShip affectShip:isSouthDirection
                                     withPositive:isPositive
                                      originPoint:index];
+        [tempShip resetSunkStats];
         direction = [self getDirection:isSouthDirection withPositive:isPositive];
         for (int j = 0; j < length; j++)
         {
-            [_grid replaceObjectAtIndex:index withObject:[_shipArray objectAtIndex:i]];
+            [_grid replaceObjectAtIndex:index withObject:tempShip];
             index += direction;
         }
     }
+}
+
+/**
+ *  @author François  Juteau, 15-08-06 02:08:48
+ *
+ *  @brief  Manage all ships placement
+ */
+-(void)replaceShips
+{
+    Ship *tempShip;
+    NSUInteger length = 0;
+    int randomPositive, randomDir;
+    BOOL isSouthDirection = NO;
+    BOOL isPositive = NO;
+    NSUInteger index = 0;
+    NSInteger direction;
+    
+    for (int i = 0; i < NBGRID; i++)
+    {
+        [_grid replaceObjectAtIndex:i withObject:@""];
+    }
+    
+    for (int i = 0; i < NBSHIP; i++)
+    {
+        tempShip = [_shipArray objectAtIndex:i];
+        
+        if (![tempShip isSunk])
+        {
+            length = 0;
+            
+            while(![self isShipPlacementOk:index
+                             withDirection:isSouthDirection
+                              withPositive:isPositive
+                                withLength:length])
+            {
+                index = [self getRandomIndex:[[_shipArray objectAtIndex:i] originPoint] withLevel:self.level];
+                
+                length = [[_shipArray objectAtIndex:i] length];
+                randomDir = arc4random() % 2;
+                isSouthDirection = (BOOL)randomDir;
+                randomPositive = arc4random() % 2;
+                isPositive = (BOOL)randomPositive;
+                
+            }
+            [[_shipArray objectAtIndex:i] affectShip:isSouthDirection
+                                        withPositive:isPositive
+                                         originPoint:index];
+            direction = [self getDirection:isSouthDirection withPositive:isPositive];
+            for (int j = 0; j < length; j++)
+            {
+                [_grid replaceObjectAtIndex:index withObject:[_shipArray objectAtIndex:i]];
+                index += direction;
+            }
+        }
+    }
+}
+
+-(NSInteger)getRandomIndex:(NSInteger)_index withLevel:(NSInteger)_levelWanted
+{
+    BOOL isVerticalRandom = arc4random() % 2;
+    BOOL isPositiveRandom = arc4random() % 2;
+    NSInteger randomDistance = arc4random() % _levelWanted+1;
+    NSInteger direction = [self getDirection:isVerticalRandom withPositive:isPositiveRandom];
+    
+    return _index + (direction * randomDistance);
 }
 
 /**
@@ -237,14 +315,17 @@ static DataManager *sharedDataManager = nil;
             withPositive:(BOOL)_isPositive
               withLength:(NSInteger)_length
 {
+    NSInteger direction = 0;
+    NSInteger newIndex = 0;
+    
     // If the ship is not initialized
     if (_length != 0)
     {
-        if ([self isCaseEmpty:_index])
+        if (_index < NBGRID && _index >= 0 && [self isCaseEmpty:_index])
         {
-            NSInteger direction = [self getDirection:_isSouthDirection
+            direction = [self getDirection:_isSouthDirection
                                         withPositive:_isPositive];
-            NSInteger newIndex = _index;
+            newIndex = _index;
             
             for (int i = 0; i < _length; i++)
             {
@@ -302,15 +383,29 @@ static DataManager *sharedDataManager = nil;
  *  @return true if the ship is in parts
  */
 -(BOOL)isShipExitsGrid:(NSInteger)_index
-         withDirection:(BOOL)_isSouthDirection
+         withDirection:(BOOL)_isVertical
 {
-    if (!_isSouthDirection && _index % NB_LINES == NB_COLONS-1 )
+    if (!_isVertical)
     {
-        return YES;
+        if (_index % NB_LINES >= NB_COLONS-1)
+        {
+            return YES;
+        }
+        if (_index % NB_LINES <= 0)
+        {
+            return YES;
+        }
     }
-    if (_isSouthDirection && _index > LAST_LINE )
+    if (_isVertical)
     {
-        return YES;
+        if (_index > LAST_LINE)
+        {
+            return YES;
+        }
+        if (_index < FIRST_LINE)
+        {
+            return YES;
+        }
     }
     return NO;
 }
@@ -334,7 +429,8 @@ static DataManager *sharedDataManager = nil;
     
     for (int i = 0; i < length; i++)
     {
-        direction = [self getDirection:isSouthDirection withPositive:isPositive];
+        direction = [self getDirection:isSouthDirection
+                          withPositive:isPositive];
         
         [tempIndexes addObject:[[NSString alloc] initWithFormat:@"%ld", newIndex]];
         newIndex += direction;
@@ -351,7 +447,7 @@ static DataManager *sharedDataManager = nil;
  *  @param _isSouthDirection direction index
  *  @return direction value
  */
--(NSUInteger)getDirection:(BOOL)_isSouthDirection
+-(NSInteger)getDirection:(BOOL)_isSouthDirection
              withPositive:(BOOL)_isPositive
 {
     if (_isSouthDirection)
@@ -392,6 +488,24 @@ static DataManager *sharedDataManager = nil;
 {
     Ship *tempShip = [_grid objectAtIndex:_index];
     return [tempShip idType];
+}
+
+-(NSMutableArray *)getAllOriginePoints
+{
+    NSMutableArray *origineArray = [[NSMutableArray alloc] init];
+    for (int i = 0; i < NBSHIP; i++)
+    {
+        if (![[_shipArray objectAtIndex:i] isSunk])
+        {
+            [origineArray addObject:[[NSString alloc] initWithFormat:@"%ld",[[self.shipArray objectAtIndex:i] originPoint]]];
+        }
+    }
+    return origineArray;
+}
+
+-(NSInteger)getNbShipLeft
+{
+    return NBSHIP - nbShipSunk;
 }
 
 @end

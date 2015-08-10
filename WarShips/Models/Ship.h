@@ -16,7 +16,7 @@
 @property BOOL isVertical;
 @property BOOL isPositif;
 @property NSInteger originPoint;
-@property (strong, nonatomic) NSDictionary *indexes;
+@property BOOL isSunk;
 
 -(id) initWithType:(NSInteger)_type; // Constructeur de la classe Ship
 
@@ -26,4 +26,5 @@
 
 -(BOOL)isHeadshot:(NSUInteger)_index;
 
+-(void)resetSunkStats;
 @end

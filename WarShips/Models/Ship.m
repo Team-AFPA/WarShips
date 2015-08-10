@@ -26,18 +26,15 @@ static NSArray *lengthTab; // Array de la taille des bateaux
         
         _idType = _type;
         _length = [lengthTab[_idType] integerValue]; // initialistaion de la longueur d'un bateau
-
     }
 
     return self;
 }
 
 -(void)affectShip:(BOOL)isVertical withPositive:(BOOL)_positive originPoint:(NSInteger)originPoint{ // Méthode d'affectation des paramètres d'un objet Ship
-    _nbCaseTouch = 0; // Initialisation des nombres de touches
     _isVertical = isVertical; // Intialisation de la position du bateau
     _isPositif = _positive;
     _originPoint = originPoint; // Initialisation du point d'origine
-    
     
 }
 
@@ -49,6 +46,12 @@ static NSArray *lengthTab; // Array de la taille des bateaux
 -(BOOL)isHeadshot:(NSUInteger)_index
 {
     return _originPoint == _index;
+}
+
+-(void)resetSunkStats
+{
+    _nbCaseTouch = 0; // Initialisation des nombres de touches
+    _isSunk = NO;
 }
 
 @end

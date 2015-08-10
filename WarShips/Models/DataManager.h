@@ -16,7 +16,7 @@
 // =================== //
 #pragma mark - Instance Methods
 
-@property NSUInteger *level;
+@property NSInteger level;
 @property BOOL isHeadshotEnable;
 
 // =================== //
@@ -67,6 +67,7 @@
  */
 -(BOOL)isEndOfGame;
 
+-(void)replaceShips;
 
 #pragma mark - DEBUG
 /**
@@ -77,5 +78,9 @@
  *  @return ship type
  */
 -(NSUInteger)getShipType:(NSUInteger)_index;
+
+-(NSMutableArray *)getAllOriginePoints;
+
+-(NSInteger)getNbShipLeft;
 
 @end

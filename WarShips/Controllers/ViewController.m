@@ -134,6 +134,11 @@
     [self updateLabels];
     // Désactivation du bouton pour que l'utilisateur ne puisse "tirer" 2 fois au même endroit
     [sender setEnabled:NO];
+    
+    [sharedDataManager replaceShips];
+    NSArray *indexesOfShipsPlaces = [sharedDataManager getAllIndexesForAllShips];
+    [self resetButtons];
+    [self setButtonsAtIndexes:indexesOfShipsPlaces];
 }
 
 
@@ -201,7 +206,15 @@
              [button setBackgroundColor:[UIColor colorWithRed:1 green:0.93 blue:0 alpha:1]];
              [button setTitle:[[NSString alloc] initWithFormat:@"%ld",[sharedDataManager getShipType:index]] forState:UIControlStateNormal];
          }
-     } 
+     }
+    if (DEBUG_MODE)
+    {
+        NSMutableArray *origineArray = [sharedDataManager getAllOriginePoints];
+        for (NSUInteger j = 0; j < [sharedDataManager getNbShipLeft]; j++)
+        {
+            [[allButtons objectAtIndex:[[origineArray objectAtIndex:j] integerValue]] setBackgroundColor:[UIColor colorWithRed:0.8 green:0.11 blue:0 alpha:1]];
+        }
+    }
 }
 
 @end
