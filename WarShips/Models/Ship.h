@@ -14,10 +14,15 @@
 @property NSInteger length;
 @property NSInteger nbCaseTouch;
 @property BOOL isVertical;
+@property BOOL isPositif;
 @property NSInteger originPoint;
 
 -(id) initWithType:(NSInteger)_type; // Constructeur de la classe Ship
 
--(void)affectShip:(BOOL)isVertical originPoint:(NSInteger)originPoint; // Méthode d'affectation des paramètres d'un objet Ship
+-(void)affectShip:(BOOL)isVertical withPositive:(BOOL)_positive originPoint:(NSInteger)originPoint; // Méthode d'affectation des paramètres d'un objet Ship
+
+-(BOOL)isShipSunk;
+
+-(BOOL)isHeadshot:(NSUInteger)_index;
 
 @end
