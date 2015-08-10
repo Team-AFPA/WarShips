@@ -15,6 +15,8 @@
 #define SOUTH_DIRECTION 10
 #define EAST_DIRECTION 1
 #define LAST_LINE 89
+#define NB_LINES 10
+#define NB_COLONS 10
 
 @interface DataManager ()
     // ====================== //
@@ -287,15 +289,11 @@ static DataManager *sharedDataManager = nil;
  */
 -(BOOL)isShipExitsGrid:(NSInteger)_index withDirection:(BOOL)_isSouthDirection
 {
-    if (!_isSouthDirection && _index%10 == 9 )
+    if (!_isSouthDirection && _index % NB_LINES == NB_COLONS-1 )
     {
         return YES;
     }
     if (_isSouthDirection && _index > LAST_LINE )
-    {
-        return YES;
-    }
-    if(_index == 90)
     {
         return YES;
     }
@@ -307,7 +305,7 @@ static DataManager *sharedDataManager = nil;
  *
  *  @brief  Get all indexes for the ship in param
  *  @param _index ship index wanted
- *  @return array of indexes if the ship is sunk / nil if it's only touch
+ *  @return array of indexes of the ship
  */
 -(NSMutableArray *)getAllIndexForShipAtIndex:(NSInteger)_index
 {
