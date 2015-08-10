@@ -16,6 +16,7 @@
 @property BOOL isVertical;
 @property BOOL isPositif;
 @property NSInteger originPoint;
+@property (strong, nonatomic) NSDictionary *indexes;
 
 -(id) initWithType:(NSInteger)_type; // Constructeur de la classe Ship
 

@@ -12,6 +12,14 @@
 @interface DataManager : NSObject
 
 // =================== //
+// --- PROPERTIES ---- //
+// =================== //
+#pragma mark - Instance Methods
+
+@property NSUInteger *level;
+@property BOOL isHeadshotEnable;
+
+// =================== //
 // ----- METHODS ----- //
 // =================== //
 #pragma mark - Instance Methods
