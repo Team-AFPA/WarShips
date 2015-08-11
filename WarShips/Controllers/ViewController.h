@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DataManager.h"
 
 @interface ViewController : UIViewController <UIAlertViewDelegate>
+
+@property (strong, nonatomic) DataManager *sharedDataManager;
 
 @property (strong, nonatomic) IBOutlet UILabel *labelNbShots;
 @property (strong, nonatomic) IBOutlet UILabel *labelNbPartsOfShipsTouched;

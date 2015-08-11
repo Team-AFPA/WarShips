@@ -88,10 +88,10 @@
 			children = (
 				42256DAD1B71F0D30090C135 /* AppDelegate.h */,
 				42256DAE1B71F0D30090C135 /* AppDelegate.m */,
-				42256DAF1B71F0D30090C135 /* ViewController.h */,
-				42256DB01B71F0D30090C135 /* ViewController.m */,
 				42256E311B78A05C0090C135 /* MenuController.h */,
 				42256E321B78A05C0090C135 /* MenuController.m */,
+				42256DAF1B71F0D30090C135 /* ViewController.h */,
+				42256DB01B71F0D30090C135 /* ViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";

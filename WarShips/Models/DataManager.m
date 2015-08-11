@@ -98,6 +98,8 @@ static DataManager *sharedDataManager = nil;
             [_grid addObject:@""];
         }
         [self reset];
+        
+        _level = 1;
     }
     
     return self;
@@ -115,8 +117,6 @@ static DataManager *sharedDataManager = nil;
         [_grid replaceObjectAtIndex:i withObject:@""];
     }
     
-    self.isHeadshotEnable = YES;
-    self.level = 1;
     nbShipSunk = 0;
     
     [self placeShips];

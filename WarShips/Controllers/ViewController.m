@@ -8,7 +8,6 @@
 
 #import "ViewController.h"
 #import "ShipButton.h"
-#import "DataManager.h"
 
 #define DEBUG_MODE 1
 
@@ -18,11 +17,14 @@
     int nbPartsOfShipsTouched;   // Nombre de fois qu'un tir a touché un bateau
     int nbShipsSunken;           // Nombre de bateaux coulés
 }
-    @property DataManager *sharedDataManager;
+@property (strong, nonatomic) IBOutlet UILabel *labelLevel;
+@property (strong, nonatomic) IBOutlet UILabel *labelHeadShot;
+
+
 @end
 
 @implementation ViewController
-@synthesize sharedDataManager, labelNbShots, labelNbPartsOfShipsTouched, labelNbShipsSunken, allButtons;
+@synthesize sharedDataManager, labelNbShots, labelNbPartsOfShipsTouched, labelNbShipsSunken, labelHeadShot, labelLevel, allButtons;
 
 -(instancetype)initWithCoder:(NSCoder *)aDecoder
 {
@@ -30,7 +32,6 @@
     
     if (self)
     {
-        sharedDataManager = [DataManager sharedDataManager];
         nbShots = 0;
         nbPartsOfShipsTouched = 0;
         nbShipsSunken = 0;
@@ -45,6 +46,24 @@
     [super viewDidLoad];
 
     [self updateLabels];
+    
+    int activate = (int)[sharedDataManager isHeadshotEnable];
+    switch (activate)
+    {
+        case 0:
+            [labelHeadShot setText:@"HeadShot désactivé"];
+            break;
+        case 1:
+            [labelHeadShot setText:@"HeadShot activé"];            
+            break;
+            
+        default:
+            break;
+    }
+    
+    [labelLevel setText:[NSString stringWithFormat:@"Niveau %ld", [sharedDataManager level]]];
+    
+    [sharedDataManager reset];
     NSArray *indexesOfShipsPlaces = [sharedDataManager getAllIndexesForAllShips];
     
     [self setButtonsAtIndexes:indexesOfShipsPlaces];

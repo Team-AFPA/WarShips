@@ -8,9 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MenuController : UIViewController
+@interface MenuController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>
 
-
-@property (weak, nonatomic) IBOutlet UISlider *levelSlider;
+// =================== //
+// --- PROPERTIES ---- //
+// =================== //
+@property (strong, nonatomic) IBOutlet UISwitch *switchHeadShot;
+@property (strong, nonatomic) IBOutlet UIPickerView *pickerLevels;
 
 @end
