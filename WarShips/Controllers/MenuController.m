@@ -40,7 +40,7 @@
 - (IBAction)activateShipsMovement:(id)sender
 {
     [sharedDataManager setShipsMustMove:[sender isOn]];
-    [pickerLevels setHidden:[sender isOn]];
+    [pickerLevels setHidden:![sender isOn]];
 }
 
 
@@ -54,7 +54,7 @@
 {
      ViewController *destination = [segue destinationViewController];
     [destination setSharedDataManager:sharedDataManager];
-    [destination setShouldHideLabelLevel:[switchShipsMustMove isOn]];
+    [destination setShouldHideLabelLevel:![switchShipsMustMove isOn]];
 }
 
 
@@ -63,6 +63,7 @@
     [pickerLevels selectRow:[sharedDataManager level]-1 inComponent:0 animated:NO];
     [switchHeadShot setOn:[sharedDataManager isHeadshotEnable]];
     [switchShipsMustMove setOn:[sharedDataManager shipsMustMove]];
+    [pickerLevels setHidden:![switchShipsMustMove isOn]];
 }
 
 
