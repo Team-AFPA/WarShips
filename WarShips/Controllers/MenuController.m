@@ -41,6 +41,9 @@
 {
     [sharedDataManager setShipsMustMove:[sender isOn]];
     [pickerLevels setHidden:![sender isOn]];
+    [switchHeadShot setEnabled:[sender isOn]];
+    [switchHeadShot setOn:[sender isOn] animated:YES];
+    [sharedDataManager setIsHeadshotEnable:[switchHeadShot isOn]];
 }
 
 
@@ -61,6 +64,7 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [pickerLevels selectRow:[sharedDataManager level]-1 inComponent:0 animated:NO];
+    [switchHeadShot setEnabled:[sharedDataManager isHeadshotEnable]];
     [switchHeadShot setOn:[sharedDataManager isHeadshotEnable]];
     [switchShipsMustMove setOn:[sharedDataManager shipsMustMove]];
     [pickerLevels setHidden:![switchShipsMustMove isOn]];
