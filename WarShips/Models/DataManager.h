@@ -18,6 +18,7 @@
 
 @property NSInteger level;
 @property BOOL isHeadshotEnable;
+@property BOOL shipsMustMove;
 
 // =================== //
 // ----- METHODS ----- //

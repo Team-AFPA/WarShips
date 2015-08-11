@@ -20,10 +20,10 @@
 #define NB_COLONS 10
 
 @interface DataManager ()
+    #pragma mark - Properties
     // ====================== //
     // ----- PROPERTIES ----- //
     // ====================== //
-    #pragma mark - Properties
     /**
     *  @author François  Juteau, 15-08-05 00:08:07
     *
@@ -99,6 +99,10 @@ static DataManager *sharedDataManager = nil;
         }
         [self reset];
         
+//        if (_shipsMustMove)
+//        {
+//            _level
+//        }
         _level = 1;
     }
     

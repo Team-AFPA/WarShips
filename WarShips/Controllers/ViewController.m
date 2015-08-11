@@ -24,7 +24,7 @@
 @end
 
 @implementation ViewController
-@synthesize sharedDataManager, labelNbShots, labelNbPartsOfShipsTouched, labelNbShipsSunken, labelHeadShot, labelLevel, allButtons;
+@synthesize sharedDataManager, labelNbShots, labelNbPartsOfShipsTouched, labelNbShipsSunken, labelHeadShot, labelLevel, shouldHideLabelLevel, allButtons;
 
 -(instancetype)initWithCoder:(NSCoder *)aDecoder
 {
@@ -60,8 +60,14 @@
         default:
             break;
     }
-    
-    [labelLevel setText:[NSString stringWithFormat:@"Niveau %ld", [sharedDataManager level]]];
+    if (shouldHideLabelLevel)
+    {
+        [labelLevel setHidden:YES];
+    }
+    else
+    {
+        [labelLevel setText:[NSString stringWithFormat:@"Niveau %ld", [sharedDataManager level]]];
+    }
     
     [sharedDataManager reset];
     NSArray *indexesOfShipsPlaces = [sharedDataManager getAllIndexesForAllShips];
@@ -154,10 +160,13 @@
     // Désactivation du bouton pour que l'utilisateur ne puisse "tirer" 2 fois au même endroit
     [sender setEnabled:NO];
     
-    [sharedDataManager replaceShips];
-    NSArray *indexesOfShipsPlaces = [sharedDataManager getAllIndexesForAllShips];
-    [self resetButtons];
-    [self setButtonsAtIndexes:indexesOfShipsPlaces];
+    if ([sharedDataManager shipsMustMove])
+    {
+        [sharedDataManager replaceShips];
+        NSArray *indexesOfShipsPlaces = [sharedDataManager getAllIndexesForAllShips];
+        [self resetButtons];
+        [self setButtonsAtIndexes:indexesOfShipsPlaces];
+    }
 }
 
 

@@ -15,5 +15,5 @@
 // =================== //
 @property (strong, nonatomic) IBOutlet UISwitch *switchHeadShot;
 @property (strong, nonatomic) IBOutlet UIPickerView *pickerLevels;
-
+@property (strong, nonatomic) IBOutlet UISwitch *switchShipsMustMove;
 @end

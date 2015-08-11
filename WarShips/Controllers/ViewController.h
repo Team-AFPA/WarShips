@@ -13,6 +13,8 @@
 
 @property (strong, nonatomic) DataManager *sharedDataManager;
 
+@property BOOL shouldHideLabelLevel;
+
 @property (strong, nonatomic) IBOutlet UILabel *labelNbShots;
 @property (strong, nonatomic) IBOutlet UILabel *labelNbPartsOfShipsTouched;
 @property (strong, nonatomic) IBOutlet UILabel *labelNbShipsSunken;

@@ -15,7 +15,7 @@
 @end
 
 @implementation MenuController
-@synthesize sharedDataManager, pickerLevels, switchHeadShot;
+@synthesize sharedDataManager, pickerLevels, switchHeadShot, switchShipsMustMove;
 
 -(instancetype)initWithCoder:(NSCoder *)aDecoder
 {
@@ -37,6 +37,12 @@
     [sharedDataManager setIsHeadshotEnable:[sender isOn]];
 }
 
+- (IBAction)activateShipsMovement:(id)sender
+{
+    [sharedDataManager setShipsMustMove:[sender isOn]];
+    [pickerLevels setHidden:[sender isOn]];
+}
+
 
 -(IBAction)returnFromGameToSettings:(UIStoryboardSegue*)sender
 {
@@ -48,6 +54,7 @@
 {
      ViewController *destination = [segue destinationViewController];
     [destination setSharedDataManager:sharedDataManager];
+    [destination setShouldHideLabelLevel:[switchShipsMustMove isOn]];
 }
 
 
@@ -55,6 +62,7 @@
 {
     [pickerLevels selectRow:[sharedDataManager level]-1 inComponent:0 animated:NO];
     [switchHeadShot setOn:[sharedDataManager isHeadshotEnable]];
+    [switchShipsMustMove setOn:[sharedDataManager shipsMustMove]];
 }
 
 
