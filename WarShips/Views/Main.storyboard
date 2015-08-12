@@ -101,11 +101,25 @@
                                     <outlet property="delegate" destination="7im-BL-xs5" id="ybj-Pk-HmG"/>
                                 </connections>
                             </pickerView>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iWQ-QS-fPS">
+                                <rect key="frame" x="-25" y="-15" width="51" height="31"/>
+                                <connections>
+                                    <action selector="activateDebugMode:" destination="7im-BL-xs5" eventType="valueChanged" id="c9K-mJ-pLM"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Debug" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZSN-KC-pTR">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="0jt-Tu-7kl" firstAttribute="centerY" secondItem="eaj-Mz-GSD" secondAttribute="centerY" id="0RQ-rV-jV7"/>
                             <constraint firstItem="uAz-Tp-3yl" firstAttribute="trailing" secondItem="eD7-sa-ubX" secondAttribute="trailing" id="6mx-c9-0gT"/>
+                            <constraint firstItem="iWQ-QS-fPS" firstAttribute="centerY" secondItem="ZSN-KC-pTR" secondAttribute="centerY" id="7gK-dl-zHH"/>
                             <constraint firstItem="eD7-sa-ubX" firstAttribute="leading" secondItem="uAz-Tp-3yl" secondAttribute="leading" id="8wB-rw-jVf"/>
                             <constraint firstItem="0jt-Tu-7kl" firstAttribute="leading" secondItem="fbH-JA-wqU" secondAttribute="leadingMargin" constant="25" id="Ajg-mr-DGJ"/>
                             <constraint firstItem="eD7-sa-ubX" firstAttribute="top" secondItem="Apg-P5-82n" secondAttribute="bottom" constant="8" symbolic="YES" id="Ftb-ey-b2S"/>
@@ -115,9 +129,11 @@
                             <constraint firstItem="LMN-nx-Q0f" firstAttribute="leading" secondItem="eaj-Mz-GSD" secondAttribute="leading" id="TkE-hQ-iPb"/>
                             <constraint firstItem="uAz-Tp-3yl" firstAttribute="top" secondItem="eD7-sa-ubX" secondAttribute="bottom" constant="35" id="XZV-pK-bKq"/>
                             <constraint firstItem="LMN-nx-Q0f" firstAttribute="top" secondItem="uAz-Tp-3yl" secondAttribute="bottom" constant="42" id="ZkF-Pr-Fo5"/>
+                            <constraint firstItem="iWQ-QS-fPS" firstAttribute="leading" secondItem="ZSN-KC-pTR" secondAttribute="trailing" constant="8" symbolic="YES" id="a2f-FO-S3K"/>
                             <constraint firstItem="ngS-wl-OEx" firstAttribute="top" secondItem="eaj-Mz-GSD" secondAttribute="bottom" constant="42" id="b3W-I7-q6W">
                                 <variation key="widthClass=compact" constant="33"/>
                             </constraint>
+                            <constraint firstItem="w5E-ut-ECU" firstAttribute="top" secondItem="iWQ-QS-fPS" secondAttribute="bottom" constant="8" symbolic="YES" id="gAC-gd-Nbx"/>
                             <constraint firstItem="uAz-Tp-3yl" firstAttribute="centerX" secondItem="ngS-wl-OEx" secondAttribute="centerX" id="mo8-dR-TiV"/>
                             <constraint firstItem="Eb2-Xf-xmf" firstAttribute="trailing" secondItem="0jt-Tu-7kl" secondAttribute="trailing" id="q7Y-oZ-Kn1"/>
                             <constraint firstItem="ngS-wl-OEx" firstAttribute="leading" secondItem="fbH-JA-wqU" secondAttribute="leading" id="rwL-ze-hpo"/>
@@ -126,6 +142,7 @@
                                 <variation key="widthClass=compact" constant="29"/>
                             </constraint>
                             <constraint firstItem="Eb2-Xf-xmf" firstAttribute="centerY" secondItem="LMN-nx-Q0f" secondAttribute="centerY" id="xrK-Zi-P1j"/>
+                            <constraint firstItem="iWQ-QS-fPS" firstAttribute="trailing" secondItem="uAz-Tp-3yl" secondAttribute="trailing" id="yb7-Ja-BJS"/>
                             <constraint firstItem="LMN-nx-Q0f" firstAttribute="leading" secondItem="Eb2-Xf-xmf" secondAttribute="trailing" constant="19" id="yuJ-G1-f2d"/>
                         </constraints>
                         <variation key="default">
@@ -138,6 +155,8 @@
                                 <exclude reference="0jt-Tu-7kl"/>
                                 <exclude reference="eaj-Mz-GSD"/>
                                 <exclude reference="ngS-wl-OEx"/>
+                                <exclude reference="iWQ-QS-fPS"/>
+                                <exclude reference="ZSN-KC-pTR"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="8wB-rw-jVf"/>
@@ -159,6 +178,10 @@
                                 <exclude reference="uIQ-66-K41"/>
                                 <exclude reference="wOG-7q-uMf"/>
                                 <exclude reference="RT0-yN-0fD"/>
+                                <exclude reference="gAC-gd-Nbx"/>
+                                <exclude reference="7gK-dl-zHH"/>
+                                <exclude reference="a2f-FO-S3K"/>
+                                <exclude reference="yb7-Ja-BJS"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -171,6 +194,8 @@
                                 <include reference="0jt-Tu-7kl"/>
                                 <include reference="eaj-Mz-GSD"/>
                                 <include reference="ngS-wl-OEx"/>
+                                <include reference="iWQ-QS-fPS"/>
+                                <include reference="ZSN-KC-pTR"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="8wB-rw-jVf"/>
@@ -192,16 +217,30 @@
                                 <include reference="uIQ-66-K41"/>
                                 <include reference="wOG-7q-uMf"/>
                                 <include reference="RT0-yN-0fD"/>
+                                <include reference="gAC-gd-Nbx"/>
+                                <include reference="7gK-dl-zHH"/>
+                                <include reference="a2f-FO-S3K"/>
+                                <include reference="yb7-Ja-BJS"/>
                             </mask>
                         </variation>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="ULC-ZE-SNe" appends="YES" id="KsW-a8-qrg"/>
+                        </connections>
                     </view>
                     <connections>
+                        <outlet property="labelDebugMode" destination="ZSN-KC-pTR" id="T5a-nW-8Uv"/>
                         <outlet property="pickerLevels" destination="ngS-wl-OEx" id="Lv1-F2-nbW"/>
+                        <outlet property="switchDebugMode" destination="iWQ-QS-fPS" id="7ft-du-Tfo"/>
                         <outlet property="switchHeadShot" destination="LMN-nx-Q0f" id="Htt-4s-xCS"/>
                         <outlet property="switchShipsMustMove" destination="eaj-Mz-GSD" id="ZzX-Ir-Yub"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IBM-2n-3af" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer numberOfTapsRequired="3" numberOfTouchesRequired="2" id="ULC-ZE-SNe">
+                    <connections>
+                        <action selector="showSwitchDebugMode:" destination="7im-BL-xs5" id="uSc-9p-tu3"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-133.5" y="272"/>
         </scene>

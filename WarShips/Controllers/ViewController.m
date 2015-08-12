@@ -9,13 +9,12 @@
 #import "ViewController.h"
 #import "ShipButton.h"
 
-#define DEBUG_MODE 0
-
 @interface ViewController ()
 {
     int nbShots;                 // Nombre de tirs effectué par le joueur
     int nbPartsOfShipsTouched;   // Nombre de fois qu'un tir a touché un bateau
     int nbShipsSunken;           // Nombre de bateaux coulés
+//    BOOL debugMode;
 }
 @property (strong, nonatomic) IBOutlet UILabel *labelLevel;
 @property (strong, nonatomic) IBOutlet UILabel *labelHeadShot;
@@ -229,13 +228,13 @@
          ShipButton *button = [allButtons objectAtIndex:index];
          [button setIsThereAShip:YES];
          
-         if (DEBUG_MODE)
+         if ([sharedDataManager debugMode])
          {
              [button setBackgroundColor:[UIColor colorWithRed:1 green:0.93 blue:0 alpha:1]];
              [button setTitle:[[NSString alloc] initWithFormat:@"%ld",[sharedDataManager getShipType:index]] forState:UIControlStateNormal];
          }
      }
-    if (DEBUG_MODE)
+    if ([sharedDataManager debugMode])
     {
         NSMutableArray *origineArray = [sharedDataManager getAllOriginePoints];
         for (NSUInteger j = 0; j < [sharedDataManager getNbShipLeft]; j++)

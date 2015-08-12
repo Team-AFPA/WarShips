@@ -104,6 +104,7 @@ static DataManager *sharedDataManager = nil;
 //            _level
 //        }
         _level = 1;
+        _debugMode = NO;
     }
     
     return self;

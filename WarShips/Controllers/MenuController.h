@@ -16,4 +16,8 @@
 @property (strong, nonatomic) IBOutlet UISwitch *switchHeadShot;
 @property (strong, nonatomic) IBOutlet UIPickerView *pickerLevels;
 @property (strong, nonatomic) IBOutlet UISwitch *switchShipsMustMove;
+
+@property (strong, nonatomic) IBOutlet UILabel *labelDebugMode;
+@property (strong, nonatomic) IBOutlet UISwitch *switchDebugMode;
+
 @end

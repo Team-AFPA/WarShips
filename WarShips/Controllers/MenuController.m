@@ -15,7 +15,7 @@
 @end
 
 @implementation MenuController
-@synthesize sharedDataManager, pickerLevels, switchHeadShot, switchShipsMustMove;
+@synthesize sharedDataManager, pickerLevels, switchHeadShot, switchShipsMustMove, labelDebugMode, switchDebugMode;
 
 -(instancetype)initWithCoder:(NSCoder *)aDecoder
 {
@@ -47,6 +47,19 @@
 }
 
 
+- (IBAction)showSwitchDebugMode:(UITapGestureRecognizer *)sender
+{
+    [labelDebugMode setHidden:![labelDebugMode isHidden]];
+    [switchDebugMode setHidden:![switchDebugMode isHidden]];
+}
+
+
+- (IBAction)activateDebugMode:(id)sender
+{
+    [sharedDataManager setDebugMode:[switchDebugMode isOn]];
+}
+
+
 -(IBAction)returnFromGameToSettings:(UIStoryboardSegue*)sender
 {
     // Called when exit the ViewController
@@ -62,12 +75,18 @@
 
 
 -(void)viewWillAppear:(BOOL)animated
-{
-    [pickerLevels selectRow:[sharedDataManager level]-1 inComponent:0 animated:NO];
+{    
     [switchHeadShot setEnabled:[sharedDataManager isHeadshotEnable]];
     [switchHeadShot setOn:[sharedDataManager isHeadshotEnable]];
+    
     [switchShipsMustMove setOn:[sharedDataManager shipsMustMove]];
+    
+    [pickerLevels selectRow:[sharedDataManager level]-1 inComponent:0 animated:NO];
     [pickerLevels setHidden:![switchShipsMustMove isOn]];
+
+    [labelDebugMode setHidden:YES];
+    [switchDebugMode setHidden:YES];
+    [switchDebugMode setOn:[sharedDataManager debugMode]];
 }
 
 

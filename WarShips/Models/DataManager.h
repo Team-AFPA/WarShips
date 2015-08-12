@@ -16,6 +16,7 @@
 // =================== //
 #pragma mark - Instance Methods
 
+@property BOOL debugMode;
 @property NSInteger level;
 @property BOOL isHeadshotEnable;
 @property BOOL shipsMustMove;
