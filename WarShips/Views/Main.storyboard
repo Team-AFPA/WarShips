@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7im-BL-xs5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7im-BL-xs5">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
@@ -159,26 +159,26 @@
                                 <exclude reference="ZSN-KC-pTR"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="0RQ-rV-jV7"/>
+                                <exclude reference="Ajg-mr-DGJ"/>
+                                <exclude reference="q7Y-oZ-Kn1"/>
+                                <exclude reference="xrK-Zi-P1j"/>
                                 <exclude reference="8wB-rw-jVf"/>
                                 <exclude reference="Ftb-ey-b2S"/>
                                 <exclude reference="IUz-ob-wNg"/>
-                                <exclude reference="6mx-c9-0gT"/>
-                                <exclude reference="XZV-pK-bKq"/>
-                                <exclude reference="mo8-dR-TiV"/>
-                                <exclude reference="q7Y-oZ-Kn1"/>
-                                <exclude reference="xrK-Zi-P1j"/>
-                                <exclude reference="0RQ-rV-jV7"/>
-                                <exclude reference="Ajg-mr-DGJ"/>
-                                <exclude reference="TkE-hQ-iPb"/>
-                                <exclude reference="ZkF-Pr-Fo5"/>
-                                <exclude reference="yuJ-G1-f2d"/>
                                 <exclude reference="IwE-N7-2Hb"/>
                                 <exclude reference="b3W-I7-q6W"/>
                                 <exclude reference="rwL-ze-hpo"/>
                                 <exclude reference="uIQ-66-K41"/>
-                                <exclude reference="wOG-7q-uMf"/>
+                                <exclude reference="6mx-c9-0gT"/>
+                                <exclude reference="XZV-pK-bKq"/>
+                                <exclude reference="mo8-dR-TiV"/>
                                 <exclude reference="RT0-yN-0fD"/>
                                 <exclude reference="gAC-gd-Nbx"/>
+                                <exclude reference="wOG-7q-uMf"/>
+                                <exclude reference="TkE-hQ-iPb"/>
+                                <exclude reference="ZkF-Pr-Fo5"/>
+                                <exclude reference="yuJ-G1-f2d"/>
                                 <exclude reference="7gK-dl-zHH"/>
                                 <exclude reference="a2f-FO-S3K"/>
                                 <exclude reference="yb7-Ja-BJS"/>
@@ -198,26 +198,26 @@
                                 <include reference="ZSN-KC-pTR"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="0RQ-rV-jV7"/>
+                                <include reference="Ajg-mr-DGJ"/>
+                                <include reference="q7Y-oZ-Kn1"/>
+                                <include reference="xrK-Zi-P1j"/>
                                 <include reference="8wB-rw-jVf"/>
                                 <include reference="Ftb-ey-b2S"/>
                                 <include reference="IUz-ob-wNg"/>
-                                <include reference="6mx-c9-0gT"/>
-                                <include reference="XZV-pK-bKq"/>
-                                <include reference="mo8-dR-TiV"/>
-                                <include reference="q7Y-oZ-Kn1"/>
-                                <include reference="xrK-Zi-P1j"/>
-                                <include reference="0RQ-rV-jV7"/>
-                                <include reference="Ajg-mr-DGJ"/>
-                                <include reference="TkE-hQ-iPb"/>
-                                <include reference="ZkF-Pr-Fo5"/>
-                                <include reference="yuJ-G1-f2d"/>
                                 <include reference="IwE-N7-2Hb"/>
                                 <include reference="b3W-I7-q6W"/>
                                 <include reference="rwL-ze-hpo"/>
                                 <include reference="uIQ-66-K41"/>
-                                <include reference="wOG-7q-uMf"/>
+                                <include reference="6mx-c9-0gT"/>
+                                <include reference="XZV-pK-bKq"/>
+                                <include reference="mo8-dR-TiV"/>
                                 <include reference="RT0-yN-0fD"/>
                                 <include reference="gAC-gd-Nbx"/>
+                                <include reference="wOG-7q-uMf"/>
+                                <include reference="TkE-hQ-iPb"/>
+                                <include reference="ZkF-Pr-Fo5"/>
+                                <include reference="yuJ-G1-f2d"/>
                                 <include reference="7gK-dl-zHH"/>
                                 <include reference="a2f-FO-S3K"/>
                                 <include reference="yb7-Ja-BJS"/>

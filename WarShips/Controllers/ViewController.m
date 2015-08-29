@@ -205,7 +205,7 @@
 {
     for (ShipButton *button in allButtons)
     {
-        [button setIsThereAShip:NO];
+        [button setThereAShip:NO];
         [button setBackgroundColor:[UIColor colorWithRed:0 green:0.29 blue:0.55 alpha:1]];
         [button setEnabled:YES];
         [button setTitle:@"" forState:UIControlStateNormal];
@@ -226,7 +226,7 @@
      {
          NSUInteger index = [[indexesOfShips objectAtIndex:i] integerValue];
          ShipButton *button = [allButtons objectAtIndex:index];
-         [button setIsThereAShip:YES];
+         [button setThereAShip:YES];
          
          if ([sharedDataManager debugMode])
          {

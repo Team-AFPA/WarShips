@@ -9,6 +9,7 @@
 #import "ShipButton.h"
 
 @implementation ShipButton
+@synthesize thereAShip;
 
 - (instancetype)init
 {
@@ -16,22 +17,10 @@
     
     if (self != nil)
     {
-        isThereAShip = NO;
+        thereAShip = NO;
     }
     
     return self;
-}
-
-
--(BOOL) isThereAShip
-{
-    return isThereAShip;
-}
-
-
--(void) setIsThereAShip:(BOOL)_bool
-{
-    isThereAShip = _bool;
 }
 
 @end
